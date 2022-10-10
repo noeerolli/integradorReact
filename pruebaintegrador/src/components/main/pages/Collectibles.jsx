@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Card, CardGroup, Container, Row } from "react-bootstrap";
-
+import '../pages/pages.css';
+import { Slider } from "./Slider";
 
 export const Collectibles =()=>{
 
@@ -17,9 +18,12 @@ export const Collectibles =()=>{
   
          
     return(
-  
+
+      
       <Container>
-  
+        <Slider/>
+        <h1 className="title">Productos</h1>
+
         <Row xs={1} md={2} className="g-4">
   
           {productsDB.map(({id,name, price, image}) => (
@@ -33,8 +37,8 @@ export const Collectibles =()=>{
                     <Card.Text>
                     Descripción producto
                     </Card.Text>
-                    <Button variant="primary">Agregar al carrito</Button>
-                    <Button variant="primary">Comprar</Button>
+                    <Button variant="primary">Agregar al carrito</Button>{" "}
+                    <Button variant="primary">Comprar</Button>{" "}
                 </Card.Body>
                 <Card.Footer className="text-muted">2 days ago</Card.Footer>
             </Card>

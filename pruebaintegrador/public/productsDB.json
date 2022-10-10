@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Yoda",
+        "name": "Baby Yoda",
         "price": 1,
         "image": "http://www.la-fm.es/wp-content/uploads/2020/02/11inch-Plush-by-Mattel-3.jpg"
     },
@@ -15,12 +15,18 @@
         "id": 3,
         "name": "Darth Vader",
         "price": 1,
-        "image": "https://hasbrostore.cl/12236-thickbox_default/star-wars-gh-mega-mighties-darth-vader.jpg"
+        "image": "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/6101047624067?fmt=jpeg&qlt=90&wid=608&hei=608"
     },
     {
         "id": 4,
-        "name": "",
+        "name": "R2-D2",
         "price": 1,
-        "image": "patata.jpg"
+        "image": "https://www.collector4u.com/wp-content/uploads/2022/03/x_hasf5570.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Aayla",
+        "price": 1,
+        "image": "https://c1-ebgames.eb-cdn.com.au/merchandising/images/packshots/52a0a6de7b484c2c80495436e84d2e2b_Large.jpg"
     }
 ]

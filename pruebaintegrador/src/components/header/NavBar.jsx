@@ -4,42 +4,43 @@ import {Button, Nav, Navbar, NavDropdown} from 'react-bootstrap'
 import { Logo } from './Logo'
 
 
+//este componente debería desglosarlo en otros componentes
+
 export const NavBar =()=>{
     return(
         
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar expand="lg" bg="dark" variant="dark">
          
                     
-            <Nav className="me-auto">
+            <Nav className="me-auto d-flex align-items-center">
 
-            <Logo/>
-            <NavDropdown title="Productos" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
-                    Coleccionables</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                    Remeras
-                </NavDropdown.Item>
-                
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                
-                <NavDropdown.Divider />
-                
-                <NavDropdown.Item href="#action/3.4">
-                    Ofertas
-                </NavDropdown.Item>
-            </NavDropdown>
+                <Logo/>
+                <NavDropdown title="Productos" id="collasible-nav-dropdown">
+                    <NavDropdown.Item href="/collectibles">
+                        Coleccionables</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.2">
+                        Remeras
+                    </NavDropdown.Item>
+                    
+                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                    
+                    <NavDropdown.Divider />
+                    
+                    <NavDropdown.Item href="#action/3.4">
+                        Ofertas
+                    </NavDropdown.Item>
+                </NavDropdown>
 
-            <Nav.Link href="#sale">Ofertas</Nav.Link>
-            
+                <Nav.Link href="#sale">Ofertas</Nav.Link>
+                
             </Nav>
                             
 
-            <Nav>
-                <Button variant="outline-secondary">Login</Button>{' '}
-                <Button variant="outline-secondary">Logout</Button>{' '}
-                <Nav.Link eventKey={2} href="#memes">
-                    Dank memes
-                </Nav.Link>
+            <Nav >
+                <Button variant="secondary" size="sm">Login</Button>
+               
+                <Button variant="secondary" size="sm">Logout</Button>
+                
             </Nav>
                                 
                         

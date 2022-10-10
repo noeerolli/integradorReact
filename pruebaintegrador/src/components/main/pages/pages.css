@@ -1,0 +1,10 @@
+.title{
+    color: rgb(253, 241, 80);
+    text-align: center;
+    margin: 10%;
+}
+
+.card-img-top{
+    height: 60%;
+    width: 100%;
+}

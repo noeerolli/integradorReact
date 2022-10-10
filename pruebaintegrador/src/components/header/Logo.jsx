@@ -4,8 +4,8 @@ import logo from '../../assets/img/logo.jpg'
 
 export const Logo = () =>{
     return(
-        
-        <Navbar.Brand href="#home">
+              
+        <Navbar.Brand href="/">
                         <img
                         src={logo}
                         alt= "logo"
@@ -13,7 +13,8 @@ export const Logo = () =>{
                         height="50"
                         className="d-inline-block align-top"
                         />{''}
-                        Name?
+                        <p>WARSIES</p>
+                         
         </Navbar.Brand>
         
     )
