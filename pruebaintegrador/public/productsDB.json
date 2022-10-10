@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Yoda",
+        "price": 1,
+        "image": "http://www.la-fm.es/wp-content/uploads/2020/02/11inch-Plush-by-Mattel-3.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Obi-Wan",
+        "price": 1,
+        "image": "https://erikstore.com/51473-home_default/figura-obi-wan-star-wars-obi-wan-kenobi-vintage-collection.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Darth Vader",
+        "price": 1,
+        "image": "https://hasbrostore.cl/12236-thickbox_default/star-wars-gh-mega-mighties-darth-vader.jpg"
+    },
+    {
+        "id": 4,
+        "name": "",
+        "price": 1,
+        "image": "patata.jpg"
+    }
+]
