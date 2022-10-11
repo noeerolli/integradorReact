@@ -5,7 +5,7 @@ import logo from '../../assets/img/logo.jpg'
 export const Logo = () =>{
     return(
               
-        <Navbar.Brand href="/">
+        <Navbar.Brand  className='d-flex align-items-center ' href="/">
                         <img
                         src={logo}
                         alt= "logo"
@@ -13,7 +13,7 @@ export const Logo = () =>{
                         height="50"
                         className="d-inline-block align-top"
                         />{''}
-                        <p>WARSIES</p>
+                        WARSIES
                          
         </Navbar.Brand>
         

@@ -21,7 +21,7 @@ export const Collectibles =()=>{
 
       
       <Container>
-        <Slider/>
+       
         <h1 className="title">Productos</h1>
 
         <Row xs={1} md={2} className="g-4">
