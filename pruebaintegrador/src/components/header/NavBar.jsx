@@ -1,5 +1,5 @@
 
-import {Button, Nav, Navbar, NavDropdown} from 'react-bootstrap'
+import {Button, Form, Nav, Navbar, NavDropdown} from 'react-bootstrap'
 
 import { Logo } from './Logo'
 
@@ -7,11 +7,13 @@ import { Logo } from './Logo'
 //este componente debería desglosarlo en otros componentes
 
 export const NavBar =()=>{
+ // mapear opciones
+
     return(
         
         <Navbar expand="lg" bg="dark" variant="dark">
-         
-                    
+
+            
             <Nav className="me-auto d-flex align-items-center">
 
                 <Logo/>
@@ -31,18 +33,18 @@ export const NavBar =()=>{
                     </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link href="#sale">Ofertas</Nav.Link>
+                <Nav.Link href="#contacto">Contacto</Nav.Link>
                 
             </Nav>
                             
 
             <Nav >
-                <Button variant="secondary" size="sm">Login</Button>
-               
-                <Button variant="secondary" size="sm">Logout</Button>
-                
+           
+                <Button variant="light mx-2" >Login</Button>
+                <Button variant="light mx-2" >Logout</Button>
+             
             </Nav>
-                                
+                            
                         
                 
         </Navbar>

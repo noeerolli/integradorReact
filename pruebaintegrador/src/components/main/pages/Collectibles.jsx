@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Card, CardGroup, Container, Row } from "react-bootstrap";
 import '../pages/pages.css';
-import { Slider } from "./Slider";
+
 
 export const Collectibles =()=>{
 

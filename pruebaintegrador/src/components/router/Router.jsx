@@ -7,6 +7,7 @@ export const Router = () =>{
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/collectibles' element={<Collectibles />} />
+            <Route path='/contact' element={<Collectibles />} />
         </Routes>
     )
 }
