@@ -33,7 +33,7 @@ export const NavBar =()=>{
                     </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link href="#contacto">Contacto</Nav.Link>
+                <Nav.Link href="/contact">Contacto</Nav.Link>
                 
             </Nav>
                             
