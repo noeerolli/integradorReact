@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Card, CardGroup, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import '../pages/pages.css';
 
 
@@ -14,7 +15,7 @@ export const Collectibles =()=>{
         .then(datos =>{
           setproductsDB(datos)
         }))
-    })
+    }, [])
   
          
     return(
@@ -26,7 +27,14 @@ export const Collectibles =()=>{
 
         <Row xs={1} md={2} className="g-4">
   
-          {productsDB.map(({id,name, price, image}) => (
+          {productsDB.map(({id,name, price, image, description}) => (
+
+            <Link
+              key = {id}
+              to = {`/items/${id}`}
+
+              >
+
             <CardGroup>
             <Card className="text-center" style={{ width: '18rem' }}>
                 
@@ -35,7 +43,7 @@ export const Collectibles =()=>{
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
-                    Descripción producto
+                    {description}
                     </Card.Text>
                     <Button variant="primary">Agregar al carrito</Button>{" "}
                     <Button variant="primary">Comprar</Button>{" "}
@@ -43,6 +51,7 @@ export const Collectibles =()=>{
                 <Card.Footer className="text-muted">2 days ago</Card.Footer>
             </Card>
             </CardGroup>
+            </Link>
           ))}
   
         </Row>
