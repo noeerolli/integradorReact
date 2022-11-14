@@ -27,7 +27,7 @@ export const Collectibles =()=>{
 
         <Row xs={1} md={2} className="g-4">
   
-          {productsDB.map(({id,name, price, image, description}) => (
+          {productsDB.map(({id,name, price, image, description, details}) => (
 
             <Link
               key = {id}
