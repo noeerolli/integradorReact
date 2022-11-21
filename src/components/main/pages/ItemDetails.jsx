@@ -1,9 +1,8 @@
-//import { Button, Card, CardGroup } from "react-bootstrap"
-//import {id, price, image, name} from "./Collectibles"
 
 import { useEffect, useState } from "react";
 import { Button, Card, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+//import { useFetch } from "../../../hooks/useFetch";
 
 
 
@@ -11,6 +10,9 @@ export const ItemDetails = () =>{
 
     //parámetro de la ruta
     const {id} = useParams()
+
+    
+    //const{productsDB: item} = useFetch()  ----no funciona
 
     const [item, setItem] = useState([])
 
