@@ -1,31 +1,52 @@
+import { useContext } from "react";
+import { useState } from "react"
 import { Badge, ListGroup } from "react-bootstrap"
+import { CartContext } from "./CartContext";
 
 export const Cart = () =>{
+
+
+    const [counter, setCounter] = useState(0);
+    const {addProduct} = useContext(CartContext);
+
+
+    function add(){
+        setCounter(counter + 1);  //restringir de acuerdo al stock en base de datos
+    }
+
+    function remove(){
+       counter > 0 && setCounter(counter - 1);
+    }
+
+
+
     return(
         <div>
             <div>
                 <h1 style={{color: "white", textAlign: "center"}}>Carrito</h1>
             </div>
             <div>
-                <ListGroup as="ul" numbered>
+                <ListGroup as="ul">
                     <ListGroup.Item
                         as="li"
-                        className="d-flex justify-content-between align-items-start"
+                        className="d-flex justify-content-between"
                     >
-                        <div className="ms-2 me-auto">
+                     
                         <div className="fw-bold">Product: </div>
                         
-                        </div>
+                        
                         <div>
-                        <button>-</button>
+                        <button onClick={remove}>-</button> {/*centrar estos botones*/}
                         <Badge bg="primary" pill>
-                            14 {/* agregar el counter*/}
+                             {counter}
                         </Badge>
+                        <button onClick={add}>+</button>
                         </div>
-                        <button>+</button>
+
                         <div>
-                            <p>Total</p>     
+                            <p>Total:</p>     
                         </div>
+
                     </ListGroup.Item>
 
                     

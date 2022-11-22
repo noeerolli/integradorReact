@@ -1,22 +1,14 @@
-import { useEffect, useState } from "react";
+
 import { Button, Card, CardGroup, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useFetch } from "../../../hooks/useFetch";
 import '../pages/pages.css';
 
 
 export const Collectibles =()=>{
 
+const{productsDB} = useFetch()
 
-    const [productsDB, setproductsDB] = useState([]);
-  
-    useEffect(()=>{
-      fetch("productsDB.json")
-        .then(response => response.json()
-        .then(datos =>{
-          setproductsDB(datos)
-        }))
-    }, [])
-  
          
     return(
 

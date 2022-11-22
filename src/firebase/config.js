@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore/lite";
-import {getAuht} from "firebase/auth"    //para autenticacion de usuarios que registremos o aquellos con cuentas de google
+import {getAuth} from "firebase/auth"    //para autenticacion de usuarios que registremos o aquellos con cuentas de google
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -13,6 +13,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
-const firebaseDb = getFirestore(firebaseApp);
-const firebaseAuth = getAuth(firebaseApp);
+export const firebaseApp = initializeApp(firebaseConfig);
+export const firebaseDb = getFirestore(firebaseApp);
+export const firebaseAuth = getAuth(firebaseApp);
