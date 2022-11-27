@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { CartBox } from "../../cart/CartBox";
 //import { useFetch } from "../../../hooks/useFetch";
 
 
@@ -22,7 +23,7 @@ export const ItemDetails = () =>{
           .then(datos =>{
                 setItem(datos.find(product =>product.id===parseInt(id)))
             })
-            .then(console.log(item))
+            .then(console.log(id))
     }, [])
 
     return(
@@ -39,10 +40,12 @@ export const ItemDetails = () =>{
                     <Card.Text>
                     {item.details}
                     </Card.Text>
-                    <Button variant="primary">Agregar al carrito</Button>{" "} {/*agrega al cart, suma al counte, se muestra en icono*/}
-                    <Button variant="primary">Comprar</Button>{" "}  {/* ver si lo saco */ }
+                    <CartBox products={item}>                       
+                    </CartBox>
+                    {/*<Button variant="primary">Agregar al carrito</Button>{" "}*/} {/*agrega al cart, suma al counte, se muestra en icono*/}
+                    {/* <Button variant="primary">Comprar</Button>{" "}  */}
                 </Card.Body>
-                <Card.Footer className="text-muted">2 days ago</Card.Footer>
+                
             </Card>
         </Container>
     )

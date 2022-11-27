@@ -1,14 +1,20 @@
 
-import {Button, Form, Nav, Navbar, NavDropdown} from 'react-bootstrap'
-
+import {Button, Nav, Navbar, NavDropdown} from 'react-bootstrap'
 import { Logo } from './Logo'
 import {FaOpencart} from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../cart/CartContext';
 
 
 
 export const NavBar =()=>{
  // mapear opciones
+
+
+
+    const {cartCounter} = useContext(CartContext)
+
 
     return(
         
@@ -41,10 +47,11 @@ export const NavBar =()=>{
 
             <Nav >
                 <Link to='cart'>
-                    <div>
-                        <FaOpencart style={{color: 'white', fontSize: '230%'}} />{/*counter*/}
-
+                    <div style={{color:'white'}}>
+                        <FaOpencart style={{color: 'white', fontSize: '230%'}} />
+                        {cartCounter} 
                     </div>
+                    
                 </Link>
                 <Button variant="light mx-2" >Login</Button>
                 <Button variant="light mx-2" >Logout</Button>

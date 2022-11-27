@@ -1,23 +1,13 @@
 import { useContext } from "react";
 import { useState } from "react"
 import { Badge, ListGroup } from "react-bootstrap"
+import { FaTrashAlt } from "react-icons/fa";
+
 import { CartContext } from "./CartContext";
 
 export const Cart = () =>{
 
-
-    const [counter, setCounter] = useState(0);
-    const {addProduct} = useContext(CartContext);
-
-
-    function add(){
-        setCounter(counter + 1);  //restringir de acuerdo al stock en base de datos
-    }
-
-    function remove(){
-       counter > 0 && setCounter(counter - 1);
-    }
-
+    const {products} = useContext(CartContext);
 
 
     return(
@@ -25,37 +15,34 @@ export const Cart = () =>{
             <div>
                 <h1 style={{color: "white", textAlign: "center"}}>Carrito</h1>
             </div>
-            <div>
-                <ListGroup as="ul">
-                    <ListGroup.Item
-                        as="li"
-                        className="d-flex justify-content-between"
-                    >
-                     
-                        <div className="fw-bold">Product: </div>
-                        
-                        
-                        <div>
-                        <button onClick={remove}>-</button> {/*centrar estos botones*/}
-                        <Badge bg="primary" pill>
-                             {counter}
-                        </Badge>
-                        <button onClick={add}>+</button>
-                        </div>
 
-                        <div>
-                            <p>Total:</p>     
-                        </div>
+            {products.map(({id, name, image, price, numProducts})=>
+                <div>
+                    <ListGroup as="ul" key={id}>
 
-                    </ListGroup.Item>
+                        <ListGroup.Item
+                            as="li"
+                            className="d-flex justify-content-between"
+                        >
+                            <img style={{width: "4em"}} src={image} alt={id}></img>
+                            <div>
+                            <div className="fw-bold">Product:{name} - Id: {id} </div>
+                            <div>Precio: {price}- Cantidad: {numProducts}</div>
+                            </div>
+                            <div><FaTrashAlt/>Eliminar</div>
+                            
+                            <div>
+                                <p>Total: {price}</p>     
+                            </div>
 
-                    
-                                         
-                    
+                        </ListGroup.Item>
 
 
-                </ListGroup>
-            </div>
+                    </ListGroup>
+                
+                </div>
+            )}
+
          </div>
     )
 }

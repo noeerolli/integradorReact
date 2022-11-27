@@ -37,10 +37,13 @@ const{productsDB} = useFetch()
                     <Card.Text>
                     {description}
                     </Card.Text>
-                    <Button variant="primary">Agregar al carrito</Button>{" "}
-                    <Button variant="primary">Comprar</Button>{" "}
+                    <Button variant="primary"
+                     /* onClick={()=>addProduct()}*/
+                    
+                    >Agregar al carrito</Button>{" "}
+                   {/* <Button variant="primary">Comprar</Button>{" "}*/}
                 </Card.Body>
-                <Card.Footer className="text-muted">2 days ago</Card.Footer>
+               
             </Card>
             </CardGroup>
             </Link>
