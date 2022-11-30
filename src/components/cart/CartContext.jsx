@@ -7,7 +7,7 @@ export const CartProvider = ({children}) =>{
 
     const [cartCounter, setCartCounter] = useState(0)
     const [products, setProducts] = useState([])
-    const [total, setTotal] = useState(0)
+    const [total, setTotal] = useState(0)  //falta
 
 
 

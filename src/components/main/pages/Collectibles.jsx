@@ -40,7 +40,7 @@ const{productsDB} = useFetch()
                     <Button variant="primary"
                      /* onClick={()=>addProduct()}*/
                     
-                    >Agregar al carrito</Button>{" "}
+                    >Ver más</Button>{" "}
                    {/* <Button variant="primary">Comprar</Button>{" "}*/}
                 </Card.Body>
                

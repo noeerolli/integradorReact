@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { Button, Card, Container } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { CartBox } from "../../cart/CartBox";
 //import { useFetch } from "../../../hooks/useFetch";
@@ -13,12 +13,12 @@ export const ItemDetails = () =>{
     const {id} = useParams()
 
     
-    //const{productsDB: item} = useFetch()  ----no funciona
+    //const{productsDB: item} = useFetch()  //
 
     const [item, setItem] = useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:3000/productsDB.json") //ver por q ncesito ponerle lla url y no funciona solo con el json
+        fetch("http://localhost:3000/productsDB.json") //sin la url no funciona
           .then(response => response.json())
           .then(datos =>{
                 setItem(datos.find(product =>product.id===parseInt(id)))

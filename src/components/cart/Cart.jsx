@@ -1,6 +1,5 @@
 import { useContext } from "react";
-import { useState } from "react"
-import { Badge, ListGroup } from "react-bootstrap"
+import { Button, ListGroup } from "react-bootstrap"
 import { FaTrashAlt } from "react-icons/fa";
 
 import { CartContext } from "./CartContext";
@@ -29,7 +28,7 @@ export const Cart = () =>{
                             <div className="fw-bold">Product:{name} - Id: {id} </div>
                             <div>Precio: {price}- Cantidad: {numProducts}</div>
                             </div>
-                            <div><FaTrashAlt/>Eliminar</div>
+                            <Button style={{backgroundColor: "black", borderColor: "black"}}><FaTrashAlt/>Eliminar</Button>
                             
                             <div>
                                 <p>Total: {price}</p>     
@@ -47,10 +46,12 @@ export const Cart = () =>{
     )
 }
 
-//lista de productos posibilidad de aumentar o disminuir cantidad de items
-//total producto
 
 
-//total compra
 
-//seguir comprando
+//falta total precio por item, total compra
+//funcionalidad del boton eliminar
+
+//Si está vacío que muestre algo, puede ser msj "su carrito está vacío"
+
+//seguir comprando??

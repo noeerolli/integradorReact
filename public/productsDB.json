@@ -4,7 +4,8 @@
         "name": "Baby Yoda",
         "price": 1,
         "image": "http://www.la-fm.es/wp-content/uploads/2020/02/11inch-Plush-by-Mattel-3.jpg",
-        "description" : "bla, bla, bla"
+        "description" : "bla, bla, bla",
+        "details": "mas bla, bla"
     },
     {
         "id": 2,
