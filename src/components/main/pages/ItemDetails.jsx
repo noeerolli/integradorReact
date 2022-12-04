@@ -13,7 +13,7 @@ export const ItemDetails = () =>{
     const {id} = useParams()
 
     
-    //const{productsDB: item} = useFetch()  //
+    //const{productsDB: item} = useFetch(id)  
 
     const [item, setItem] = useState([])
 

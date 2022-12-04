@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useFetch =()=>{
+export const useFetch =(id)=>{
 
     const [productsDB, setproductsDB] = useState([]);
   
@@ -8,7 +8,13 @@ export const useFetch =()=>{
       fetch("productsDB.json")
         .then(response => response.json()
         .then(datos =>{
+
+          datos = id ? datos.find(product => product.id === id) : datos
+
           setproductsDB(datos)
+
+
+
         }))
     }, [])
 

@@ -15,7 +15,7 @@ const{productsDB} = useFetch()
       
       <Container>
        
-        <h1 className="title">Productos</h1>
+        <h1 className="title">Coleccionables</h1>
 
         <Row xs={1} md={2} className="g-4">
   

@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import {initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore/lite";
 import {getAuth} from "firebase/auth"    //para autenticacion de usuarios que registremos o aquellos con cuentas de google
 
@@ -16,3 +16,17 @@ const firebaseConfig = {
 export const firebaseApp = initializeApp(firebaseConfig);
 export const firebaseDb = getFirestore(firebaseApp);
 export const firebaseAuth = getAuth(firebaseApp);
+
+
+
+
+
+
+/* Bases de datos no relacionales
+
+colecciones con documentos
+
+
+
+
+*/
