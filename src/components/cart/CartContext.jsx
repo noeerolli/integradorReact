@@ -7,7 +7,7 @@ export const CartProvider = ({children}) =>{
 
     const [cartCounter, setCartCounter] = useState(0)
     const [products, setProducts] = useState([])
-    const [total, setTotal] = useState(0)  //falta
+    //const [total, setTotal] = useState(0)  //falta
 
 
 
@@ -18,6 +18,7 @@ export const CartProvider = ({children}) =>{
         if(value > 0 ){
             setCartCounter(cartCounter + value)
             setProducts([...products, {...product, numProducts: value}]) 
+            
             
         }
 
@@ -30,7 +31,8 @@ export const CartProvider = ({children}) =>{
         <CartContext.Provider value={{
             addProduct,
             cartCounter,
-            products
+            products,
+            
         }}>
             {children}
         </CartContext.Provider>

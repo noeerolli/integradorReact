@@ -10,7 +10,7 @@
     {
         "id": 2,
         "name": "Obi-Wan",
-        "price": 1,
+        "price": 5,
         "image": "https://erikstore.com/51473-home_default/figura-obi-wan-star-wars-obi-wan-kenobi-vintage-collection.jpg",
         "description" : "bla, bla, bla",
         "details": "mas bla, bla"
@@ -26,7 +26,7 @@
     {
         "id": 4,
         "name": "R2-D2",
-        "price": 1,
+        "price": 8,
         "image": "https://www.collector4u.com/wp-content/uploads/2022/03/x_hasf5570.jpg",
         "description" : "bla, bla, bla",
         "details": "mas bla, bla"
@@ -34,7 +34,7 @@
     {
         "id": 5,
         "name": "Aayla",
-        "price": 1,
+        "price": 2,
         "image": "https://c1-ebgames.eb-cdn.com.au/merchandising/images/packshots/52a0a6de7b484c2c80495436e84d2e2b_Large.jpg",
         "description" : "bla, bla, bla",
         "details": "mas bla, bla"
