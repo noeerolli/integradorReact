@@ -6,17 +6,22 @@ import { CartContext } from "./CartContext";
 export const CartBox = ({products}) => {
 
     const [counter, setCounter] = useState(0);
+    
+
     const {addProduct} = useContext(CartContext);
-    //const [productTotal, setProductTotal] = useState(0)
+    
+    const sumProd = products.price*counter;
 
     function add(){
         setCounter(counter + 1);  //restringir de acuerdo al stock en base de datos
-       
+        
     }
 
     function remove(){
        counter > 0 && setCounter(counter - 1);
+       
     }
+
 
     
 
@@ -29,13 +34,15 @@ export const CartBox = ({products}) => {
                 </Badge>
                 <button onClick={add}>+</button>
             </div>
+
+            <h3>Total: {sumProd} </h3>
            
             <Link to = {'/cart'}>
 
-                   <Button variant="primary" onClick={() =>addProduct(counter, products)}>Agregar al carrito</Button>
+                   <Button variant="primary" onClick={() =>addProduct(counter, products, sumProd)}>Agregar al carrito</Button>
 
             </Link>
-        
+            {console.log(sumProd)}
         </>
     )
 }

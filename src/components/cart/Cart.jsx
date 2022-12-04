@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { useContext } from "react";
 import { Button, ListGroup } from "react-bootstrap"
 import { FaTrashAlt } from "react-icons/fa";
@@ -7,9 +7,9 @@ import { CartContext } from "./CartContext";
 
 export const Cart = () =>{
 
-    const {products, addSum} = useContext(CartContext);
+    const {products} = useContext(CartContext);
 
- //   const [totalItem, setTotalItem] = useState(0)
+   
 
  
     
@@ -55,17 +55,7 @@ export const Cart = () =>{
                     
                 )}
 
-{/*
-                <div style={{display: "flex", backgroundColor: "white", justifyContent: "center", width:"50%"}}>           
-                    <div>    
-                         <p style={{color:"black"}}>Total:  </p> 
-                    </div>
-                                
-                    <div>
-                        <Button onClick = {() =>addSum(totalItem)} style={{backgroundColor: "black", borderColor: "black"}}>Checkout</Button> 
-                    </div>
-                </div>
-        */}
+
                 {console.log({products})}
 
             </div>
@@ -83,9 +73,8 @@ export const Cart = () =>{
 
 
 
-//falta total precio por item, total compra
+
 //funcionalidad del boton eliminar
 
-//Si está vacío que muestre algo, puede ser msj "su carrito está vacío"
 
 //seguir comprando??

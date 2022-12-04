@@ -41,10 +41,13 @@ export const ItemDetails = () =>{
                     {item.details}
                     </Card.Text>
                     <CartBox products={item}>                       
-                    </CartBox>
+                    </CartBox >
                     {/*<Button variant="primary">Agregar al carrito</Button>{" "}*/} {/*agrega al cart, suma al counte, se muestra en icono*/}
                     {/* <Button variant="primary">Comprar</Button>{" "}  */}
                 </Card.Body>
+               
+
+                
                 
             </Card>
         </Container>
