@@ -11,7 +11,7 @@ import { LoginProvider } from './components/login/LoginContext';
 
 function App() {
   return (
-    <LoginProvider>
+    <LoginProvider> {/* ver si lo acotamos solo al checkuot*/}
       <CartProvider>
           <NavBar />
           <Router />

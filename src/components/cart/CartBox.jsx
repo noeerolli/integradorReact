@@ -39,7 +39,7 @@ export const CartBox = ({products}) => {
            
             <Link to = {'/cart'}>
 
-                   <Button variant="primary" onClick={() =>addProduct(counter, products, sumProd)}>Agregar al carrito</Button>
+                   <Button variant="primary" onClick={ () =>addProduct(counter, products, sumProd)}>Agregar al carrito</Button>
 
             </Link>
             {console.log(sumProd)}

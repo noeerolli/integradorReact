@@ -10,17 +10,12 @@ export const Cart = () =>{
     const {products} = useContext(CartContext);
 
    
-
- 
-    
     if(products.length > 0){
 
         
-
         return(
 
           
-
             <div>
                 <div>
                     <h1 style={{color: "white" , textAlign: "center"}}>Carrito</h1>
@@ -28,12 +23,13 @@ export const Cart = () =>{
 
                 {products.map(({id, name, image, price, numProducts})=>
                   
-                    <div>
-                        <ListGroup as="ul" key={id}>
+                    <div  key={id}>
+                        <ListGroup as="ul">
 
                             <ListGroup.Item
                                 as="li"
                                 className="d-flex justify-content-between"
+                                
                             >
                                 <img style={{width: "4em"}} src={image} alt={id}></img>
                                 <div>

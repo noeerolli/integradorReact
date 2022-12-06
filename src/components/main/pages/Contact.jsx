@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { Button, Form, FormGroup } from "react-bootstrap"
 
 const initialState = {name: "", email: "", message: ""}
 

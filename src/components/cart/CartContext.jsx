@@ -9,11 +9,12 @@ export const CartProvider = ({children}) =>{
     const [products, setProducts] = useState([])
     const [total, setTotal] = useState(0)  
 
-    
+        
+   
     
     function addProduct (value, product, sumProd){
 
-        
+      
       
         if(value > 0 ){
             setCartCounter(cartCounter + value)

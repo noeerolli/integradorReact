@@ -16,7 +16,7 @@ export const useFetch =(id)=>{
 
 
         }))
-    }, [])
+    }, [id])
 
 
     return{productsDB}

@@ -18,13 +18,13 @@ export const ItemDetails = () =>{
     const [item, setItem] = useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:3000/productsDB.json") //sin la url no funciona
+        fetch("/productsDB.json") //sin la url no funciona
           .then(response => response.json())
           .then(datos =>{
                 setItem(datos.find(product =>product.id===parseInt(id)))
             })
             .then(console.log(id))
-    }, [])
+    }, [id])
 
     return(
         <Container className="d-flex justify-content-center ">
