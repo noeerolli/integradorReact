@@ -1,19 +1,23 @@
 import { useContext } from "react";
-import { CartContext } from "./CartContext";
+import { LoginContext } from "../login/LoginContext";
+import { SignUp } from "../login/SignUp";
+
 
 
 export const CheckoutBox = () =>{
 
+    const {isRegistered} = useContext(LoginContext);
+   
+  
 
-    const {products} = useContext(CartContext);
-
-return(
+return isRegistered 
+    ?
     <div>
 
-        
+        <p style={{color:"white"}}>checkout</p>
 
     </div>
-)
 
+    : <SignUp />
 
 }

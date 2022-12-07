@@ -53,7 +53,7 @@ export const NavBar =()=>{
                     </div>
                     
                 </Link>
-                <Button variant="light mx-2" >Login</Button>
+                <Link to="/login"><Button variant="light mx-2" >Login</Button></Link>
                 <Button variant="light mx-2" >Logout</Button>
              
             </Nav>

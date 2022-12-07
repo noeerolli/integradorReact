@@ -1,5 +1,8 @@
 import { Route, Routes } from "react-router-dom"
 import { Cart } from "../cart/Cart"
+import { CheckoutBox } from "../cart/CheckoutBox"
+import { Login } from "../login/Login"
+import { SignUp } from "../login/SignUp"
 import { Home } from "../main/home/Home"
 import { Collectibles } from "../main/pages/Collectibles"
 import { Contact } from "../main/pages/Contact"
@@ -13,6 +16,9 @@ export const Router = () =>{
             <Route path='/contact' element={<Contact />} />
             <Route path='/items/:id' element={<ItemDetails />} /> {/* usamos : en la ruta para indicar que tomará parámetros*/}
             <Route path='/cart' element={<Cart />} />
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/signUp' element={<SignUp/>}/>
+            <Route path='/checkout' element={<CheckoutBox/>}/>
         </Routes>
     )
 }

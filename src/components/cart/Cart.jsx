@@ -2,7 +2,9 @@
 import { useContext } from "react";
 import { Button, ListGroup } from "react-bootstrap"
 import { FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
+import { CheckoutBox } from "./CheckoutBox";
 
 
 export const Cart = () =>{
@@ -53,6 +55,11 @@ export const Cart = () =>{
 
 
                 {console.log({products})}
+                <div>
+                    <Link to={"/checkout"}>
+                    <button>Checkout</button>
+                    </Link>
+                </div>
 
             </div>
         )

@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Baby Yoda",
-        "price": 1,
+        "price": 7,
         "image": "http://www.la-fm.es/wp-content/uploads/2020/02/11inch-Plush-by-Mattel-3.jpg",
         "description" : "bla, bla, bla",
         "details": "mas bla, bla"
@@ -18,7 +18,7 @@
     {
         "id": 3,
         "name": "Darth Vader",
-        "price": 1,
+        "price": 12,
         "image": "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/6101047624067?fmt=jpeg&qlt=90&wid=608&hei=608",
         "description" : "bla, bla, bla",
         "details": "mas bla, bla"

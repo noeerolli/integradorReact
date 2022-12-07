@@ -11,7 +11,7 @@ export const ItemDetails = () =>{
 
     //parámetro de la ruta
     const {id} = useParams()
-
+    console.log(id)
     
     //const{productsDB: item} = useFetch(id)  
 
