@@ -26,8 +26,8 @@ export const NavBar =()=>{
 
                 <Logo/>
                 <NavDropdown title="Productos" id="collasible-nav-dropdown">
-                    <NavDropdown.Item href="/collectibles">
-                        Coleccionables</NavDropdown.Item>
+                    <NavDropdown.Item >
+                      <Link to= "/collectibles"  > Coleccionables </Link></NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">
                         Remeras
                     </NavDropdown.Item>
@@ -41,7 +41,7 @@ export const NavBar =()=>{
                     </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link href="/contact">Contacto</Nav.Link>
+                <Link to="/contact" style={{color:"white"}}><Nav>Contacto</Nav></Link>
                 
             </Nav>
 
