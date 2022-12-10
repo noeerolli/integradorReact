@@ -10,8 +10,8 @@ import { CartBox } from "../../cart/CartBox";
 export const ItemDetails = () =>{
 
     //parámetro de la ruta
-    const {id} = useParams()
-    console.log(id)
+    const {id} = useParams();
+    //console.log(id)
     
     //const{productsDB: item} = useFetch(id)  
 
@@ -23,7 +23,7 @@ export const ItemDetails = () =>{
           .then(datos =>{
                 setItem(datos.find(product =>product.id===parseInt(id)))
             })
-            .then(console.log(id))
+            
     }, [id])
 
     return(
@@ -44,10 +44,7 @@ export const ItemDetails = () =>{
                     </CartBox >
                     {/*<Button variant="primary">Agregar al carrito</Button>{" "}*/} {/*agrega al cart, suma al counte, se muestra en icono*/}
                     {/* <Button variant="primary">Comprar</Button>{" "}  */}
-                </Card.Body>
-               
-
-                
+                </Card.Body>   
                 
             </Card>
         </Container>

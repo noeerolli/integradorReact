@@ -10,42 +10,39 @@ export const Collectibles =()=>{
 const{productsDB} = useFetch()
 
          
-    return(
+  return(
 
       
-      <Container>
+    <Container>
        
-        <h1 className="title">Coleccionables</h1>
+      <h1 className="title">Coleccionables</h1>
 
-        <Row xs={1} md={2} className="g-4">
+      <Row xs={1} md={2} className="g-4">
   
-          {productsDB.map(({id,name, price, image, description, details}) => (
+        {productsDB.map(({id,name, price, image, description, details}) => (
 
-            <Link
-              key = {id}
-              to = {`/items/${id}`}
+        <Link
+          key = {id}
+          to = {`/items/${id}`}
+        >
 
-              >
-
-            <CardGroup>
-            <Card className="text-center" style={{ width: '18rem' }}>
+          <CardGroup>
+            <Card className="text-center" style={{ width: '8rem' }}>
                 
-                <Card.Header>Precio: {price}</Card.Header>
-                <Card.Img variant="top" src={image} />
-                <Card.Body>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Text>
-                    {description}
-                    </Card.Text>
-                    <Button variant="primary"
-           
-                    >Ver más</Button>{" "}
-                   {/* <Button variant="primary">Comprar</Button>{" "}*/}
-                </Card.Body>
+              <Card.Header>Precio: {price}</Card.Header>
+              <Card.Img variant="top" src={image} />
+              <Card.Body>
+                <Card.Title>{name}</Card.Title>
+                <Card.Text>
+                  {description}
+                </Card.Text>
+                <Button variant="primary">Ver más</Button>{" "}
+                    
+              </Card.Body>
                
             </Card>
-            </CardGroup>
-            </Link>
+          </CardGroup>
+        </Link>
           ))}
   
         </Row>

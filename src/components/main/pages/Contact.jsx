@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+
+
 const initialState = {name: "", email: "", message: ""}
 
 
@@ -19,46 +21,54 @@ export const Contact =()=>{
 
 
     return(
-        <form name="contactForm" className=" col-6 ">
 
+        <div>
+
+            <h1 className="title">Contacto</h1>
+        
+            <form name="contactForm" className="contact">
+
+                <input
+                    name="name"
+                    value={form.name}
+                    type="text"
+                    className="form-control mb-3"
+                    placeholder="Nombre"
+                    onChange={handleInput}
+                />
+            
             <input
-                name="name"
-                value={form.name}
-                type="text"
-                className="form-control mb-3"
-                placeholder="Nombre"
-                onChange={handleInput}
-            />
-           
-           <input
-                name="email"
-                value={form.email}
-                type="email"
-                className="form-control mb-3"
-                placeholder="Email"
-                onChange={handleInput}
-            />
+                    name="email"
+                    value={form.email}
+                    type="email"
+                    className="form-control mb-3"
+                    placeholder="Email"
+                    onChange={handleInput}
+                />
 
 
-            <input
-                name="message"
-                value={form.message}
-                type="textarea"
-                className="form-control mb-3"
-                placeholder="Escriba su mensaje"
-                rows ={5}
-                onChange={handleInput}
+                <textarea
+                    name="message"
+                    value={form.message}
+                    type="textarea"
+                    className="textarea"
+                    placeholder="Escriba su mensaje"
+                    rows ={5}
+                    cols={5}
+                    onChange={handleInput}
+                    
 
-            />
+                />
 
 
-            <button className="btn btn-outline-light"
-         
-            onClick={handleClick}
-            >Enviar</button>
+                <button className="btn btn-outline-light"
+            
+                onClick={handleClick}
+                >Enviar</button>
 
 
 
-        </form>
+            </form>
+        </div>
     )
 }

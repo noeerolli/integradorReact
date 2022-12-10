@@ -1,5 +1,5 @@
-import { Container } from "react-bootstrap"
 import introVideo from "../../../assets/video/videoCarousel.mp4"
+import { Container } from "react-bootstrap"
 
 export const Intro =()=>{
     return(

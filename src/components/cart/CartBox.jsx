@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
 import { Badge, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
+import { Link } from "react-router-dom";
 
 export const CartBox = ({products}) => {
 
@@ -23,14 +23,12 @@ export const CartBox = ({products}) => {
     }
 
 
-    
-
     return(
         <>
             <div>
                 <button onClick={remove}>-</button> {/*centrar estos botones*/}
                 <Badge bg="primary" pill>
-                {counter}
+                    {counter}
                 </Badge>
                 <button onClick={add}>+</button>
             </div>
@@ -39,10 +37,10 @@ export const CartBox = ({products}) => {
            
             <Link to = {'/cart'}>
 
-                   <Button variant="primary" onClick={ () =>addProduct(counter, products, sumProd)}>Agregar al carrito</Button>
+                <Button variant="primary" onClick={ () =>addProduct(counter, products, sumProd)}>Agregar al carrito</Button>
 
             </Link>
-            {console.log(sumProd)}
+           
         </>
     )
 }

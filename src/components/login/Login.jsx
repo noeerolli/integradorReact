@@ -1,65 +1,73 @@
-import { useState, useContext } from "react";
+import { emailLogin, signInWithGoogle } from "../../firebase/providers/providers";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { signInWithGoogle } from "../../firebase/providers/providers";
+import { useState, useContext } from "react";
+import { Link} from "react-router-dom";
 import { LoginContext } from "./LoginContext";
-import { SignUp } from "./SignUp";
+import { FcGoogle } from "react-icons/fc";
+
 
 export const Login = () =>{
 
 
-    const {firebaseLogin, waiting, wait, error, isRegistered, signup} = useContext(LoginContext);
-
-    const [form, setForm] =useState({name: "", password:""});
+    const {firebaseLogin, waiting, wait, error} = useContext(LoginContext);
+    const [form, setForm] =useState({mail: "", pass:""});
 
 
     function checkForm(e){
-      /*  e.preventDefault();
+         
+        e.preventDefault();
         wait();
-        const user = */
+        const user = emailLogin(form.mail, form.pass, error);
+        firebaseLogin(user)
+       
+
     }
 
     async function googleSignIn(e){
-        e.preventDefault()
-        wait()
-        const user = await signInWithGoogle(error)
-        firebaseLogin(user)
+        e.preventDefault();
+        wait();
+        const user = await signInWithGoogle(error);
+        firebaseLogin(user);
     }
 
 
 
     function handleInput(e){
+        
         const {name, value} = e.target;    // e. target devuelve el elemento que desencadenó el evento
         setForm({...form, [name]:value});
     }
 
 
-    return isRegistered ? <SignUp signup={signup} waiting = {waiting} handleInput = {handleInput}/> 
-            :<Container>
-                {console.log(isRegistered)}
-                <Form>
-                    <h2 style={{color: "white"}}>Login</h2>
+    return (
+        <div style={{marginTop:"8em"}}>
+            <Container>
+                <Form >
+                    <h2 style={{color: "white" }}>Login</h2>
 
                     <p style={{color:"white"}}>No tenés una cuenta <Link to = "/signUp" >Registrate</Link></p> 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control type="text" placeholder="Nombre" onChange={handleInput} />
+                        <Form.Control  name="mail" type="email" placeholder="Email" onChange={handleInput} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control type="password" placeholder="Contraseña" onChange={handleInput} />
+                        <Form.Control name="pass" type="password" placeholder="Contraseña" onChange={handleInput} />
                     </Form.Group>
                     
                     <div>
-                        <Button variant="light mx-2" onClick={checkForm} >
+                        <Button variant="light" onClick={checkForm} disabled={waiting}>
                             Login
                         </Button>
-                        <Button variant="light mx-2" onClick={googleSignIn} disabled={waiting}>
-                            Ingresar con Google
+                        <hr style={{borderTop: "3px solid white" }}></hr>
+                        
+                        <Button  className="my-3 mx-" variant="light" onClick={googleSignIn} disabled={waiting}>
+                          <FcGoogle/> Ingresar con Google
                         </Button>
                     </div>
                 </Form>
             </Container>
-
+        </div>
+    )
 }
 
 

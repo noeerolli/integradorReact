@@ -24,7 +24,7 @@ export const useFetch =(id)=>{
     return{productsDB}
 }
 
-
+//forma realizada en clase, lo probé y no funciona tampoco
 /*
 export const useFetch = (ruta= "productsDB.json" , id=false )=>{
 

@@ -1,5 +1,5 @@
-import { Container } from "react-bootstrap"
 import { Collectibles } from "../pages/Collectibles"
+import { Container } from "react-bootstrap"
 import { Intro } from "./Intro"
 
 export const Home = () =>{

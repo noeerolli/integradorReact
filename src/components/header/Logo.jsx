@@ -7,11 +7,11 @@ export const Logo = () =>{
               
         <Navbar.Brand  className='d-flex align-items-center ' href="/">
                         <img
-                        src={logo}
-                        alt= "logo"
-                        width="50"
-                        height="50"
-                        className="d-inline-block align-top"
+                            src={logo}
+                            alt= "logo"
+                            width="50"
+                            height="50"
+                            className="d-inline-block align-top"
                         />{''}
                         WARSIES
                          

@@ -4,7 +4,7 @@ import { Button, ListGroup } from "react-bootstrap"
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
-import { CheckoutBox } from "./CheckoutBox";
+
 
 
 export const Cart = () =>{
@@ -35,9 +35,9 @@ export const Cart = () =>{
                             >
                                 <img style={{width: "4em"}} src={image} alt={id}></img>
                                 <div>
-                                <div className="fw-bold">Product:{name} - Id: {id} </div>
-                                <div>Precio: {price}- Cantidad: {numProducts}</div>
-                                <p>Total: {price*numProducts} </p> 
+                                    <div className="fw-bold">Product:{name} - Id: {id} </div>
+                                    <div>Precio: {price}- Cantidad: {numProducts}</div>
+                                    <p>Total: {price*numProducts} </p> 
                                 </div>
                                 
                                 <div>

@@ -9,21 +9,33 @@ export const  LoginProvider = ({children}) =>{
     const [logged, setLogged] = useState(false);
     const [waiting, setWaiting] = useState(false);
     const [user, setUser] = useState(undefined)
-    const [isRegistered, setIsRegistered] =useState(false)
+   
 
     
     async function firebaseLogin(user){
-        const {displayName, email, uid} = await user;
+        console.log(user)
+        const { displayName, email, uid} = await user;
+        
+        if (email && uid){
+            debugger
+            login()
+            setUser ({
+                displayName,
+                email,
+                uid
+                
+            })
+            
+        }
+        console.log(user)
+        
     }
 
     function login(){
 
         setLogged(true);
+        console.log("ingresaste correctamente")
 
-    }
-
-    function signup(){
-        setIsRegistered(!isRegistered) 
     }
 
     function logout(){
@@ -43,8 +55,8 @@ export const  LoginProvider = ({children}) =>{
 
 
     return(
-        <LoginContext.Provider value={{logged, isRegistered, waiting, user, 
-                                       firebaseLogin, login,error, wait,signup, logout
+        <LoginContext.Provider value={{logged,  waiting, user, 
+                                       firebaseLogin, login,error, wait, logout
         }}>
             {children}
         </LoginContext.Provider>

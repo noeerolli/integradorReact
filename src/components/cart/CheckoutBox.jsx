@@ -1,16 +1,17 @@
-import { useContext } from "react";
 import { LoginContext } from "../login/LoginContext";
-import { SignUp } from "../login/SignUp";
+import { Login } from "../login/Login";
+import { useContext } from "react";
+
 
 
 
 export const CheckoutBox = () =>{
 
-    const {isRegistered} = useContext(LoginContext);
+    const {logged} = useContext(LoginContext);
    
   
 
-return isRegistered 
+return logged
     ?
     <div>
 
@@ -18,6 +19,7 @@ return isRegistered
 
     </div>
 
-    : <SignUp />
+    : <Login/>
+  
 
 }

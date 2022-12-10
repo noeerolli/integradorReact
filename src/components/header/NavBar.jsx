@@ -1,16 +1,17 @@
 
 import {Button, Nav, Navbar, NavDropdown} from 'react-bootstrap'
-import { Logo } from './Logo'
+import { LoginContext } from '../login/LoginContext';
+import { CartContext } from '../cart/CartContext';
 import {FaOpencart} from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { Logo } from './Logo'
 import { useContext } from 'react';
-import { CartContext } from '../cart/CartContext';
-
 
 
 export const NavBar =()=>{
- // mapear opciones
-
+    // mapear opciones
+    
+    const {logout} = useContext(LoginContext);
 
 
     const {cartCounter} = useContext(CartContext)
@@ -54,7 +55,7 @@ export const NavBar =()=>{
                     
                 </Link>
                 <Link to="/login"><Button variant="light mx-2" >Login</Button></Link>
-                <Button variant="light mx-2" >Logout</Button>
+                <Button variant="light mx-2" on onClick={logout}>Logout</Button>
              
             </Nav>
                             
