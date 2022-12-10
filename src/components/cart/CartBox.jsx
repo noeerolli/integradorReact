@@ -24,24 +24,29 @@ export const CartBox = ({products}) => {
 
 
     return(
-        <>
-            <div>
-                <button onClick={remove}>-</button> {/*centrar estos botones*/}
-                <Badge bg="primary" pill>
-                    {counter}
-                </Badge>
-                <button onClick={add}>+</button>
-            </div>
+        <div className="cart-box">
 
-            <h3>Total: {sumProd} </h3>
+            <div style={{justifyContent:"center"}}>
+                <div >
+                    <button style={{marginRight:".3em"}} onClick={remove}>-</button> {/*centrar estos botones*/}
+                    <Badge bg="dark"  pill>
+                        {counter}
+                    </Badge>
+                    <button style={{marginLeft:".3em"}} onClick={add}>+</button>
+                </div>
+                
+                <h5 style={{marginTop:"1em"}}>Total: {sumProd} </h5>
+           </div>
+
+            
            
             <Link to = {'/cart'}>
 
-                <Button variant="primary" onClick={ () =>addProduct(counter, products, sumProd)}>Agregar al carrito</Button>
+                <Button variant="dark" onClick={ () =>addProduct(counter, products, sumProd)}>Agregar al carrito</Button>
 
             </Link>
            
-        </>
+        </div>
     )
 }
 

@@ -2,6 +2,7 @@
 import { useState, createContext } from "react";
 
 
+
 export const LoginContext = createContext();
 
 export const  LoginProvider = ({children}) =>{
@@ -17,7 +18,7 @@ export const  LoginProvider = ({children}) =>{
         const { displayName, email, uid} = await user;
         
         if (email && uid){
-            debugger
+            
             login()
             setUser ({
                 displayName,
@@ -25,9 +26,12 @@ export const  LoginProvider = ({children}) =>{
                 uid
                 
             })
+           
             
         }
+
         console.log(user)
+        
         
     }
 

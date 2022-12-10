@@ -11,7 +11,7 @@ import { useContext } from 'react';
 export const NavBar =()=>{
     // mapear opciones
     
-    const {logout} = useContext(LoginContext);
+    const {logout, waiting} = useContext(LoginContext);
 
 
     const {cartCounter} = useContext(CartContext)
@@ -44,8 +44,8 @@ export const NavBar =()=>{
                 <Nav.Link href="/contact">Contacto</Nav.Link>
                 
             </Nav>
-                            
 
+             
             <Nav >
                 <Link to='cart'>
                     <div style={{color:'white'}}>
@@ -54,7 +54,7 @@ export const NavBar =()=>{
                     </div>
                     
                 </Link>
-                <Link to="/login"><Button variant="light mx-2" >Login</Button></Link>
+                <Link to="/login"><Button variant="light mx-2" disabled={waiting} >Login</Button ></Link>
                 <Button variant="light mx-2" on onClick={logout}>Logout</Button>
              
             </Nav>

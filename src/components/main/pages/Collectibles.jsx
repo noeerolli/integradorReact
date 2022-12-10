@@ -13,7 +13,7 @@ const{productsDB} = useFetch()
   return(
 
       
-    <Container>
+    <Container style={{marginTop: "8em"}}>
        
       <h1 className="title">Coleccionables</h1>
 
@@ -27,16 +27,16 @@ const{productsDB} = useFetch()
         >
 
           <CardGroup>
-            <Card className="text-center" style={{ width: '8rem' }}>
+            <Card className="text-center" style={{ width: '8em' }}>
                 
-              <Card.Header>Precio: {price}</Card.Header>
+              <div className="card-header">Precio: {price}</div>
               <Card.Img variant="top" src={image} />
               <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>
                   {description}
                 </Card.Text>
-                <Button variant="primary">Ver más</Button>{" "}
+                <Button variant="dark">Ver más</Button>{" "}
                     
               </Card.Body>
                

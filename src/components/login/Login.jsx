@@ -4,12 +4,14 @@ import { useState, useContext } from "react";
 import { Link} from "react-router-dom";
 import { LoginContext } from "./LoginContext";
 import { FcGoogle } from "react-icons/fc";
+import { Home } from "../main/home/Home";
+
 
 
 export const Login = () =>{
 
 
-    const {firebaseLogin, waiting, wait, error} = useContext(LoginContext);
+    const {firebaseLogin, waiting, wait, error,logged} = useContext(LoginContext);
     const [form, setForm] =useState({mail: "", pass:""});
 
 
@@ -39,7 +41,8 @@ export const Login = () =>{
     }
 
 
-    return (
+    return logged ? <Home/> :
+
         <div style={{marginTop:"8em"}}>
             <Container>
                 <Form >
@@ -67,7 +70,7 @@ export const Login = () =>{
                 </Form>
             </Container>
         </div>
-    )
+    
 }
 
 

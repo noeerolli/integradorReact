@@ -27,27 +27,48 @@ export const ItemDetails = () =>{
     }, [id])
 
     return(
+
+        <div>
+
+        <h1 className="title" style={{marginTop:"2em", marginBottom: "2em"}}>Detalles del producto</h1>
+
         <Container className="d-flex justify-content-center ">
-         <Card className="text-center" style={{ width: '18rem' }}>
+
+         
+
+         <Card className="text-center" style={{ width: '60rem', display:"flex", flexDirection:"row" }}>
+
+                <div style={{width:"30%"}}>
+                <Card.Header>{item.name}</Card.Header>
+                <div style={{display:"flex"}}> <img className="card-img"  src={item.image} alt={item.name}/> </div>
+                </div>
                 
-                <Card.Header>Precio: {item.price}</Card.Header>
-                <Card.Img variant="top" src={item.image} />
-                <Card.Body >
-                    <Card.Title>{item.name}</Card.Title>
-                    <Card.Text>
-                    {item.description}
-                    </Card.Text>
-                    <Card.Text>
-                    {item.details}
-                    </Card.Text>
-                    <CartBox products={item}>                       
-                    </CartBox >
-                    {/*<Button variant="primary">Agregar al carrito</Button>{" "}*/} {/*agrega al cart, suma al counte, se muestra en icono*/}
-                    {/* <Button variant="primary">Comprar</Button>{" "}  */}
-                </Card.Body>   
+                <div className="card-body" style={{width:"70%", alignItems:"center", padding:"0" }} >
+                  
+                    <Card.Header>Precio: {item.price}</Card.Header>
+                    
+                    <div style={{height:"80%"}}>
+                        <div style={{textAlign: "center", height:"70%", marginTop:"1em"}}>
+                            <Card.Text>
+                            {item.description}
+                            </Card.Text>
+                            <Card.Text>
+                            {item.details}
+                            </Card.Text>
+                        </div>
+                        
+                        <div style={{marginBottom:"1em"}}>
+                            <CartBox products={item}>                       
+                            </CartBox >
+                        </div>
+                    
+                    </div>
+                   
+                </div>   
                 
             </Card>
         </Container>
+        </div>
     )
 }
 

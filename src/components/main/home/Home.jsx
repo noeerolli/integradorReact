@@ -6,7 +6,7 @@ export const Home = () =>{
     return(
       <Container>
         <Intro />
-        <Collectibles /> 
+        <Collectibles /> {/*traer los productos de todas las categorías */}
       </Container>  
     )
 }

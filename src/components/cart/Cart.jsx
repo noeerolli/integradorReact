@@ -4,6 +4,7 @@ import { Button, ListGroup } from "react-bootstrap"
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
+import '../cart/cart.css';
 
 
 
@@ -20,12 +21,12 @@ export const Cart = () =>{
           
             <div>
                 <div>
-                    <h1 style={{color: "white" , textAlign: "center"}}>Carrito</h1>
+                    <h1 className="title">Carrito</h1>
                 </div>
 
                 {products.map(({id, name, image, price, numProducts})=>
                   
-                    <div  key={id}>
+                    <div  style={{margin: "2em"}}  key={id}>
                         <ListGroup as="ul">
 
                             <ListGroup.Item
@@ -33,15 +34,15 @@ export const Cart = () =>{
                                 className="d-flex justify-content-between"
                                 
                             >
-                                <img style={{width: "4em"}} src={image} alt={id}></img>
+                                <img style={{width: "8em"}} src={image} alt={id}></img>
                                 <div>
                                     <div className="fw-bold">Product:{name} - Id: {id} </div>
                                     <div>Precio: {price}- Cantidad: {numProducts}</div>
                                     <p>Total: {price*numProducts} </p> 
                                 </div>
                                 
-                                <div>
-                                    <Button style={{backgroundColor: "black", borderColor: "black"}}><FaTrashAlt/>Eliminar</Button> 
+                                <div style={{display:"flex", alignContent:"center"}}>
+                                    <Button className="deleteBtn"><FaTrashAlt/>Eliminar</Button> 
                                 </div>
 
                             </ListGroup.Item>
@@ -55,9 +56,9 @@ export const Cart = () =>{
 
 
                 {console.log({products})}
-                <div>
+                <div style={{margin: "2em"}}>
                     <Link to={"/checkout"}>
-                    <button>Checkout</button>
+                     <Button variant="light">Checkout</Button>
                     </Link>
                 </div>
 

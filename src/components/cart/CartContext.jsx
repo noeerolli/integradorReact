@@ -20,6 +20,7 @@ export const CartProvider = ({children}) =>{
             setCartCounter(cartCounter + value)
             setProducts([...products, {...product, numProducts: value}]) 
             setTotal(total + sumProd);
+           
             
         }
 
