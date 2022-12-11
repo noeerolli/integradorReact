@@ -44,11 +44,22 @@ a{
 }
 
 .card-img{
-    width: auto;
-    height:400px;
+    width: 100%;
+    height:auto;
 }
 
 
 .card-text{
     margin-top: 5%;
+}
+
+
+
+@media (max-width: 750px) {
+
+.card-body{
+    flex-direction: column;
+    
+}
+
 }
