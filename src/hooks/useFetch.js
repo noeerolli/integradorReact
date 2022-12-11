@@ -2,15 +2,18 @@
 
 import { useEffect, useState } from "react";
 
-export const useFetch =(id)=>{
+export const useFetch =(route="/productsDB.json", id=false)=>{
+  console.log(route)
 
     const [productsDB, setproductsDB] = useState([]);
   
     useEffect(()=>{
-      fetch("productsDB.json")
+      
+      fetch(route)
         .then(response => response.json()
+       
         .then(datos =>{
-
+          console.log(datos)
           datos = id ? datos.find(product => product.id === id) : datos
 
           setproductsDB(datos)
@@ -18,7 +21,7 @@ export const useFetch =(id)=>{
 
 
         }))
-    }, [id])
+    }, [route, id])
 
 
     return{productsDB}

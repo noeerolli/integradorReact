@@ -7,11 +7,11 @@ import { useContext } from "react";
 
 export const CheckoutBox = () =>{
 
-    const {logged} = useContext(LoginContext);
+    const {isLogged} = useContext(LoginContext);
    
   
 
-return logged
+return isLogged
     ?
     <div>
 

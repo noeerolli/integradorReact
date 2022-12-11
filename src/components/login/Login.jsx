@@ -11,7 +11,7 @@ import { Home } from "../main/home/Home";
 export const Login = () =>{
 
 
-    const {firebaseLogin, waiting, wait, error,logged} = useContext(LoginContext);
+    const {firebaseLogin, waiting, wait, error,isLogged} = useContext(LoginContext);
     const [form, setForm] =useState({mail: "", pass:""});
 
 
@@ -41,7 +41,7 @@ export const Login = () =>{
     }
 
 
-    return logged ? <Home/> :
+    return isLogged ? <Home/> :
 
         <div style={{marginTop:"8em"}}>
             <Container>

@@ -10,8 +10,9 @@
 
 .cart-box{
     display: flex; 
+    flex-direction: column;
     width: 100%; 
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 
@@ -21,4 +22,10 @@
     flex-direction: column; 
     align-items: left;
     justify-content:center ;
+}
+
+
+.card-title{
+    margin-top: 10%;
+    font-weight: bold;
 }

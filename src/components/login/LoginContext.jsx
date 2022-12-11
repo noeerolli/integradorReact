@@ -7,7 +7,7 @@ export const LoginContext = createContext();
 
 export const  LoginProvider = ({children}) =>{
 
-    const [logged, setLogged] = useState(false);
+    const [isLogged, setIsLogged] = useState(false);
     const [waiting, setWaiting] = useState(false);
     const [user, setUser] = useState(undefined)
    
@@ -37,13 +37,13 @@ export const  LoginProvider = ({children}) =>{
 
     function login(){
 
-        setLogged(true);
+        setIsLogged(true);
         console.log("ingresaste correctamente")
 
     }
 
     function logout(){
-        setLogged(false);
+        setIsLogged(false);
         setUser(undefined);
         error()
     }
@@ -59,7 +59,7 @@ export const  LoginProvider = ({children}) =>{
 
 
     return(
-        <LoginContext.Provider value={{logged,  waiting, user, 
+        <LoginContext.Provider value={{isLogged,  waiting, user, 
                                        firebaseLogin, login,error, wait, logout
         }}>
             {children}

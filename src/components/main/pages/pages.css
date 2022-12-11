@@ -31,3 +31,24 @@ a{
     text-decoration:none;
     color: black;
 }
+
+
+
+
+.imgContainer{
+    height: 500px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img{
+    width: auto;
+    height:400px;
+}
+
+
+.card-text{
+    margin-top: 5%;
+}
