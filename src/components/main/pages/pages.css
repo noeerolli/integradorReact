@@ -30,9 +30,12 @@
 a{
     text-decoration:none;
     color: black;
+
 }
 
-
+a:hover{
+    color: black;
+}
 
 
 .imgContainer{
@@ -53,6 +56,11 @@ a{
     margin-top: 5%;
 }
 
+.card-body :hover{
+    text-decoration: none;
+    
+}
+
 
 
 @media (max-width: 750px) {
@@ -61,5 +69,6 @@ a{
     flex-direction: column;
     
 }
+
 
 }
