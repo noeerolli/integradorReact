@@ -17,19 +17,19 @@ const{productsDB} = useFetch()
        
       <h1 className="title">Coleccionables</h1>
 
-      <Row xs={1} md={2} className="g-4">
+      <Row xs={1} sm={2} md={4} >
   
-        {productsDB.map(({id,name, price, image, description, details}) => (
+        {productsDB.map(({id,name, price, image, description, details, currency}) => (
 
         <Link
           key = {id}
           to = {`/items/${id}`}
         >
 
-          <CardGroup>
+          <CardGroup  >
             <Card className="text-center" style={{ width: '8em' }}>
                 
-              <div className="card-header">Precio: {price}</div>
+              <div className="card-header">Precio: {currency} {price}</div>
               <Card.Img variant="top" src={image} />
               <Card.Body>
                 <Card.Title>{name}</Card.Title>

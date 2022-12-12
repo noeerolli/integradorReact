@@ -1,42 +1,263 @@
 [
     {
         "id": 1,
+        "name": "Luke Skywalker",
+        "category": "juguete",
+        "featured": true,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/4EF11CD57FC14893AC916B30BCDC2330/0ED2CF3DBFAE465CB06ADF1A0120AC3E.jpg",
+        "type": "personaje",
+        "price": 12000,
+        "currency": "$"
+    },
+    {
+        "id": 2,
+        "name": "Darth Maul",
+        "category": "juguete",
+        "featured": true,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/301C5F9269814B66A2AF59DE95AC6603/16B6E73ED77E42219692B666A0492507.jpg",
+        "type": "personaje",
+        "price": 8000,
+        "currency": "$"
+    },
+    {
+        "id": 3,
+        "name": "Carnor Jax",
+        "category": "juguete",
+        "featured": true,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/B4849FE9349C490C83A3CABBDBA9EACD/E7593B5D41EA4744BFAF31E618B352AC.jpg",
+        "type": "personaje",
+        "price": 6500,
+        "currency": "$"
+    },
+    {
+        "id": 4,
+        "name": "Darth Vader",
+        "category": "juguete",
+        "featured": true,
+        "brand": "hasbro",
+        "image": "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/6101047624067?fmt=jpeg&qlt=90&wid=608&hei=608",
+        "type": "personaje",
+        "price":10500,
+        "currency":"$"
+    },
+    {
+        "id": 5,
+        "name": "Yoda",
+        "category": "juguete",
+        "featured": true,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/BE1A7552330D43A08D5F71455023AD0D/57ACB1D797F642AA8792E55CE9782F4A.jpg",
+        "type": "personaje",
+        "price": 8500,
+        "currency":"$"
+    },
+    {
+        "id": 6,
+        "name": "Han Solo",
+        "category": "juguete",
+        "featured": true,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/15E01F2EBF3C4307937E12CB8FFFC5BC/909D2175FFE4419D925FADA6E6C8C83D.jpg",
+        "type": "personaje",
+        "price":8500,
+        "currency":"$"
+    },
+    {
+        "id": 7,
+        "name": "Princesa Leia",
+        "category": "juguete",
+        "featured": true,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/5D95E42317644DBFAC4CDC5E6E1827AF/D4E0630A1FF34526988DF65DFB4FD40A.jpg",
+        "type": "personaje",
+        "price": 12000,
+        "currency": "$"
+    },
+    {
+        "id": 8,
+        "name": "R2D2",
+        "category": "juguete",
+        "featured": true,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/BB59FF28E9C1494B8CDBDA0989AF7AC3/3BFB99AE13AE496A86DD9A5B8A13BE3D.jpg",
+        "type": "personaje",
+        "price": 10500,
+        "currency": "$"
+    },
+    {
+        "id": 9,
+        "name": "C3PO",
+        "category": "juguete",
+        "featured": true,
+        "brand": "hasbro",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_924639-MLA51343931172_082022-O.webp",
+        "type": "personaje",
+        "price": 10500,
+        "currency": "$"
+    },
+    {
+        "id": 10,
+        "name": "Stormtrupper",
+        "category": "juguete",
+        "featured": false,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/7DD33E5E910F49D38A3AA561CEF955E2/022E1FC1C7DD44FF846DC999EE5E6E76.jpg",
+        "type": "personaje",
+        "price": 8000,
+        "currency":"$"
+    },
+    {
+        "id": 11,
+        "name": "Halcon Milenario",
+        "category": "juguete",
+        "featured": false,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/38889AAE4491463E876A71D465013A1E/93293B3D90734D89A4A9656C1652D6F8.jpg",
+        "type": "nave",
+        "price":15000,
+        "currency":"$"
+    },
+    {
+        "id": 12,
+        "name": "Tie Fighter",
+        "category": "juguete",
+        "featured": false,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/153DA1D3101847A496A6F53501368258/F7D522A6F5724094BEE1143ABD30BAA4.jpg",
+        "type": "nave",
+        "price":12500,
+        "currency":"$"
+    },
+    {
+        "id": 13,
+        "name": "X-Wing",
+        "category": "juguete",
+        "featured": false,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/C3AB6B30288B42889698127C826B91FC/7E6208BFFC2F452185AAB9218C2999CC.jpg",
+        "type": "nave",
+        "price":13000,
+        "currency":"$"
+    },
+    {
+        "id": 14,
+        "name": "Sable Laser",
+        "category": "juguete",
+        "featured": false,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/C59FB4E6795E49E0BA0FBF257FB1AAF6/E9F12AB93853428A917E7C6998CF70B4.jpg",
+        "type": "arma",
+        "price":7500,
+        "currency":"$"
+    },
+    {
+        "id": 15,
+        "name": "Grogu",
+        "category": "juguete",
+        "featured": false,
+        "brand": "hasbro",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/B4973D5B241E44C7AFCF67FA30904555/EC240EF6EB464B3EB531541BEDE057F4.jpg",
+        "type": "persona",
+        "price":14500,
+        "currency":"$"
+    },
+    {
+        "id": 16,
+        "name": "Pijama Galactic Confort",
+        "category": "indumentaria",
+        "featured": false,
+        "brand": "Star Wars",
+        "image": "https://starwarsblog.starwars.com/wp-content/uploads/2022/04/star-wars-mando-grogu-shopdisney-loungepants_1-990x634.jpg",
+        "type": "pijama",
+        "price": 8200 ,
+        "currency":"$"
+    },
+    {
+        "id": 17,
+        "name": "Buzo Go Grogu",
+        "category": "indumentaria",
+        "featured": true,
+        "brand": "Star Wars",
+        "image": "https://starwarsblog.starwars.com/wp-content/uploads/2022/04/grogu-shopdisney-spirit-jersey_1-990x634.jpg",
+        "type": "buzo",
+        "price": 18500,
+        "currency":"$"
+    },
+    {
+        "id": 18,
+        "name": "Buzo Satr Wars",
+        "category": "indumentaria",
+        "featured": false,
+        "brand": "Star Wars",
+        "image": "https://www.hasbro.com/common/productimages/es_MX/B4849FE9349C490C83A3CABBDBA9EACD/E7593B5D41EA4744BFAF31E618B352AC.jpg",
+        "type": "buzo",
+        "price": 18800,
+        "currency":"$"
+    },
+    {
+        "id": 19,
+        "name": "Camisa Imperial",
+        "category": "indimentaria",
+        "featured": false,
+        "brand": "Star Wars",
+        "image": "https://starwarsblog.starwars.com/wp-content/uploads/2022/04/woven-tie-fighter-shirt-2-990x634.jpg",
+        "type": "camisa",
+        "price": 9500,
+        "currency":"$"
+    },
+    {
+        "id": 20,
+        "name": "Buzo Boba Fet",
+        "category": "indimentaria",
+        "featured": true,
+        "brand": "Star Wars",
+        "image": "https://starwarsblog.starwars.com/wp-content/uploads/2022/04/boba-fett-sweatshirt-1-990x634.jpg",
+        "type": "buzo",
+        "price": 18500,
+        "currency":"$"
+    },
+    {
+        "id": 21,
         "name": "Baby Yoda",
-        "price": 7,
+        "price": 7000,
         "image": "http://www.la-fm.es/wp-content/uploads/2020/02/11inch-Plush-by-Mattel-3.jpg",
         "description" : "bla, bla, bla",
         "details": "mas bla, bla"
     },
     {
-        "id": 2,
+        "id": 22,
         "name": "Obi-Wan",
-        "price": 5,
+        "price": 5500,
         "image": "https://erikstore.com/51473-home_default/figura-obi-wan-star-wars-obi-wan-kenobi-vintage-collection.jpg",
         "description" : "bla, bla, bla",
         "details": "mas bla, bla"
     },
     {
-        "id": 3,
-        "name": "Darth Vader",
-        "price": 12,
-        "image": "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/6101047624067?fmt=jpeg&qlt=90&wid=608&hei=608",
+        "id": 23,
+        "name": "BB-8",
+        "price": 12300,
+        "image": "https://www.magicmakers.com.ar/img/productos/starwars/bb8-grande.jpg",
         "description" : "bla, bla, bla",
         "details": "mas bla, bla"
     },
     {
-        "id": 4,
+        "id": 24,
         "name": "R2-D2",
-        "price": 8,
+        "price": 8500,
         "image": "https://www.collector4u.com/wp-content/uploads/2022/03/x_hasf5570.jpg",
         "description" : "bla, bla, bla",
         "details": "mas bla, bla"
     },
     {
-        "id": 5,
+        "id": 25,
         "name": "Aayla",
-        "price": 2,
+        "price": 2800,
         "image": "https://c1-ebgames.eb-cdn.com.au/merchandising/images/packshots/52a0a6de7b484c2c80495436e84d2e2b_Large.jpg",
         "description" : "bla, bla, bla",
         "details": "mas bla, bla"
     }
+
 ]
