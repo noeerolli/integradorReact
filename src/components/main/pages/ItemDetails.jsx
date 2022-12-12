@@ -1,28 +1,20 @@
-import { useEffect, useState } from "react";
+
 import { useParams } from "react-router-dom";
 import { CartBox } from "../../cart/CartBox";
-//import { useFetch } from "../../../hooks/useFetch";
+import { useFetch } from "../../../hooks/useFetch";
+import { collection } from "firebase/firestore/lite";
+import { firebaseDb } from "../../../firebase/config";
 
 
 
 export const ItemDetails = () =>{
 
-    //parámetro de la ruta
+    const productsDb = collection(firebaseDb, 'productos')
+
     const {id} = useParams();
-    //console.log(id)
-    
-    //const{productsDB: item} = useFetch(id)  
 
-    const [item, setItem] = useState([])
+    const{productsData: item} = useFetch(productsDb, id)  
 
-    useEffect(()=>{
-        fetch("/productsDB.json") //sin la url no funciona
-          .then(response => response.json())
-          .then(datos =>{
-                setItem(datos.find(product =>product.id===parseInt(id)))
-            })
-            
-    }, [id])
 
     return(<>
 
