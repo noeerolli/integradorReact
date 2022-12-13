@@ -14,6 +14,7 @@ const productsDb = collection(firebaseDb, 'productos')
 const{productsData} = useFetch(productsDb)
 
          
+
   return(
    
       
@@ -21,7 +22,7 @@ const{productsData} = useFetch(productsDb)
        
       <h1 className="title">Coleccionables</h1>
 
-      <Row xs={1} md={4} className="g-4">
+      <Row xs={2} md={2} className="g-4">
   
         {productsData.map(({id,name, price, image, description, details}) => (
 
@@ -33,7 +34,7 @@ const{productsData} = useFetch(productsDb)
           <CardGroup>
             <Card border="warning" className="text-center" style={{ width: '8em' }}>
                 
-              <div className="card-header">Precio: $ {price}</div>
+              <div className="card-header">Precio: {price}</div>
               <Card.Img variant="top" src={image} />
               <div className="card-body">
                 <Card.Title>{name}</Card.Title>

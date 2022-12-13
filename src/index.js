@@ -14,15 +14,15 @@ import { BrowserRouter } from 'react-router-dom';
 
 //agregar producto
 
-//let a ={mombre: "juan", edad:15} ;
+//let a ={mombre: "Pepe", edad:22} ;
 //addProduct(a).then(res=>console.log(res.id))
 
 //agregar varios productos
 
-/*fetch("productsDB.json")
-  .then(res => res.json())
-  .then(docs => addProducts(docs))
-*/
+//fetch("productosCollectibles.json")
+ // .then(res => res.json())
+ // .then(docs => addProducts(docs))
+
 
 // buscar prod por id
 
