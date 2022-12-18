@@ -55,7 +55,7 @@ export const NavBar =()=>{
                     
                 </Link>
                 <Link to="/login"><Button variant="light mx-2" disabled={waiting} >Login</Button ></Link>
-                <Button variant="light mx-2" on onClick={logout}>Logout</Button>
+                <Button variant="light mx-2" onClick={logout}>Logout</Button>
              
             </Nav>
                             

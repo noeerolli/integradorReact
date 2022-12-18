@@ -19,7 +19,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 //agregar varios productos
 
-//fetch("productosCollectibles.json")
+//fetch("productsDB.json")
  // .then(res => res.json())
  // .then(docs => addProducts(docs))
 

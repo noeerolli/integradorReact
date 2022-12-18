@@ -6,22 +6,27 @@ import { getProducts } from "../firebase/utilities/products";
 
 
 export const useFetch =(route = undefined, id=false)=>{
-  console.log(route)
+  
 
     const [productsData, setproductsData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
   
     useEffect(()=>{
       
-      getProducts(route)
-      .then(datos =>{
-        console.log(datos)
-        datos = id ? datos.find(product => product.id === id) : datos
-  
-        setproductsData(datos)
-      })
+      if(loading){   
+        getProducts(route)
+        .then(datos =>{
+          datos = id ? datos.find(product => product.id === id) : datos
+    
+          setproductsData(datos)
+          setLoading(false)
+        })
+
+      }
       
 
-    }, [route, id])
+    }, [route, id, loading])
 
 
     return{productsData}

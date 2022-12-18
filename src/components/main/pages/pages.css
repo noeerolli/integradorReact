@@ -30,13 +30,14 @@
 
 a{
     text-decoration:none;
-    color: black;
+    
 
 }
 
 a:hover{
-    color: black;
+   /*#rgb(204, 216, 30)*/
 }
+
 
 
 .imgContainer{
