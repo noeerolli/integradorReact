@@ -10,6 +10,7 @@ export const CheckoutBox = () =>{
 
     const {isLogged} = useContext(LoginContext);
    const [formEnv, setformEnv] = useState(false)
+
   
 
 return isLogged
