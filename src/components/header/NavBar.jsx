@@ -9,7 +9,7 @@ import { useContext } from 'react';
 
 
 export const NavBar =()=>{
-    // mapear opciones
+ 
     
     const {logout, waiting} = useContext(LoginContext);
 
@@ -30,18 +30,14 @@ export const NavBar =()=>{
                       <Link to= "/collectibles"  > Coleccionables </Link>
                     </NavDropdown.Item>
                    
-                   
-                    <NavDropdown.Item href="#action/3.2">
+                                       <NavDropdown.Item >
                     <Link to= "/clothing"  > Indumentaria </Link>
                     </NavDropdown.Item>
                     
                    
-                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                    
-                   
                     <NavDropdown.Divider />
                     
-                    <NavDropdown.Item href="#action/3.4">
+                    <NavDropdown.Item >
                         Ofertas
                     </NavDropdown.Item>
                 </NavDropdown>

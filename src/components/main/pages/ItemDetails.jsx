@@ -23,7 +23,7 @@ export const ItemDetails = () =>{
                 
                 <div className="card" style={{display:"flex", flexDirection:"row", margin:"4em"}} >
                     
-                    <div className="imgContainer" style={{display:"flex", flexDirection:"column"}}>
+                    <div className="imgContainer flex-center" style={{display:"flex", flexDirection:"column"}}>
                         <img className="card-img" src={item.image} alt={item.name} />
                         <p>Precio: {item.price}</p>
                     </div>

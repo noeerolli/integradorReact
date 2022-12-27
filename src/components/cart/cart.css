@@ -29,3 +29,24 @@
     margin-top: 10%;
     font-weight: bold;
 }
+
+.total-purchase{
+   
+  
+   display: flex;
+   margin: 2em;
+   justify-content: flex-end;
+   margin-right: 4em;
+}
+
+.total-purchase-p{
+    background-color:white;
+    color:black;
+    height: 3em;
+    width: 8em;
+    display: flex;
+    border-radius: 0.375rem;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1%;
+}

@@ -5,12 +5,6 @@
     margin-bottom: 10%;
 }
 
-.card-img-top{
-    height: 60%;
-    width: 100%;
-    
-}
-
 
 .contact{
     display: flex;
@@ -38,32 +32,42 @@ a:hover{
    /*#rgb(204, 216, 30)*/
 }
 
-
-
-.imgContainer{
-    
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-img{
-    width: 100%;
-    height:auto;
+.card-img-products{
+    height: 271px;
+    width: 271px;
     object-fit: cover;
 }
 
 
 .card-text{
-    margin-top: 5%;
+    margin-top: 2%;
 }
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
 
 .card-body :hover{
     text-decoration: none;
+      
+}
+
+
+.card-button{
+    height: 5%;
     
 }
 
+.cart-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
 
 
 @media (max-width: 750px) {

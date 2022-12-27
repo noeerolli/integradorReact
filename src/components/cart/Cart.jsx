@@ -5,12 +5,20 @@ import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 import '../cart/cart.css';
+import { useState } from "react";
 
 
 
 export const Cart = () =>{
 
     const {products} = useContext(CartContext);
+
+    const [totalProducts, setTotalProducts] = useState(0)
+
+        function add(){
+            setTotalProducts(products.price*products.numProducts)
+        }
+    
 
    
     if(products.length > 0){
@@ -24,6 +32,8 @@ export const Cart = () =>{
                     <h1 className="title">Carrito</h1>
                 </div>
 
+
+
                 {products.map(({id, name, image, price, numProducts})=>
                   
                     <div  style={{margin: "2em"}}  key={id}>
@@ -34,13 +44,13 @@ export const Cart = () =>{
                                 className="d-flex justify-content-between"
                                 
                             >
-                                <img style={{width: "8em"}} src={image} alt={id}></img>
-                                <div>
+                                <img style={{width: "12em"}} src={image} alt={id}></img>
+                                <div className="cart-detail">
                                     <div className="fw-bold">Product:{name} - Id: {id} </div>
                                     <div>Precio: {price}- Cantidad: {numProducts}</div>
                                     <p>Total: {price*numProducts} </p> 
                                 </div>
-                                
+                            
                                 <div style={{display:"flex", alignContent:"center"}}>
                                     <Button className="deleteBtn"><FaTrashAlt/>Eliminar</Button> 
                                 </div>
@@ -54,11 +64,13 @@ export const Cart = () =>{
                     
                 )}
 
-
-                {console.log({products})}
+                <div className="total-purchase" >
+                    <p className="total-purchase-p">Total: {totalProducts}</p>
+                </div>
+                
                 <div style={{margin: "2em"}}>
                     <Link to={"/checkout"}>
-                     <Button variant="light">Checkout</Button>
+                     <Button variant="light ">Checkout</Button>
                     </Link>
                 </div>
 

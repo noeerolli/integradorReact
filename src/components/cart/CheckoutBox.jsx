@@ -9,7 +9,7 @@ import { useContext, useState } from "react";
 export const CheckoutBox = () =>{
 
 const {isLogged} = useContext(LoginContext);
-   const [formEnv, setformEnv] = useState(false)
+const [formEnv, setformEnv] = useState(false)
 
   
 

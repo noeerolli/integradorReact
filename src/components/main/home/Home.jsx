@@ -1,10 +1,10 @@
 
-import { Button, Card, CardGroup, Container, Row } from "react-bootstrap"
-import { Intro } from "./Intro"
+import { Button, Container, Row } from "react-bootstrap"
 import { firebaseDb } from "../../../firebase/config"
-import { Link } from "react-router-dom"
 import { collection } from "firebase/firestore/lite"
 import { useFetch } from "../../../hooks/useFetch"
+import { Link } from "react-router-dom"
+import { Intro } from "./Intro"
 
 
 
@@ -24,11 +24,11 @@ export const Home = () =>{
       <Container>
         <Intro />
 
-        <Container style={{marginTop: "8em"}}>
+        <Container style={{marginTop: "8em", marginBottom: "4em"}}>
        
        <h1 className="title">Nuestros productos</h1>
  
-       <Row xs={2} md={2} className="g-4">
+       <Row xs={1} md={2} lg={4} className="g-2">
    
          {productsData.map(({id,name, price, image, description, details}) => (
  
@@ -37,22 +37,17 @@ export const Home = () =>{
            to = {`/items/${id}`}
          >
  
-           <CardGroup>
-             <Card border="warning" className="text-center" style={{ width: '8em' }}>
-                 
-               <div className="card-header">Precio: {price}</div>
-               <Card.Img variant="top" src={image} />
-               <div className="card-body">
-                 <Card.Title>{name}</Card.Title>
-                 <Card.Text>
-                   {description}
-                 </Card.Text>
-                 <Button variant="dark">Ver más</Button>{" "}
-                     
-               </div>
-                
-             </Card>
-           </CardGroup>
+
+          | <div className="card" style={{height:"450px"}}>
+              <div className="card-header flex-center"  style={{color:"black"}}>Precio: {price}</div>
+              <div style={{display:"flex", justifyContent: "center"}}><img  className="card-img card-img-products"  src={image} alt={name} /></div>
+              <div className="card-body flex-center">
+                <p style={{color:"black", fontWeight:"bold"}}>{name}</p>    
+              </div>
+              <div className="flex-center" style={{marginBottom:"3px"}}>
+                <Button  variant="dark">Ver más</Button>{" "} 
+              </div>
+            </div>
          </Link>
            ))}
    

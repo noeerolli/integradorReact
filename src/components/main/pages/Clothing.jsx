@@ -1,4 +1,4 @@
-import { Button, Card, CardGroup, Container, Row } from "react-bootstrap"
+import { Button, Container, Row } from "react-bootstrap"
 import { collection } from "firebase/firestore/lite"
 import { firebaseDb } from "../../../firebase/config"
 import { useFetch } from "../../../hooks/useFetch"
@@ -22,11 +22,11 @@ let category = productsData.filter((item)=>item.category === 'indumentaria')
 
     return(
 
-      <Container style={{marginTop: "8em"}}>
+      <Container style={{marginTop: "8em", marginBottom: "4em"}}>
        
         <h1 className="title">Indumentaria</h1>
 
-        <Row xs={2} md={2} className="g-4">
+        <Row xs={1} md={2} lg={4} className="g-2">
   
         {category.map(({id,name, price, image, description}) => (
 
@@ -35,21 +35,17 @@ let category = productsData.filter((item)=>item.category === 'indumentaria')
           to = {`/items/${id}`}
         >
 
-          <CardGroup>
-            <Card border="warning" className="text-center" style={{ width: '8em' }}>
-                
-              <div className="card-header">Precio: {price}</div>
-              <Card.Img variant="top" src={image} />
-              <div className="card-body">
-                <Card.Title>{name}</Card.Title>
-                <Card.Text>
-                  {description}
-                </Card.Text>
-                <Button variant="dark">Ver más</Button>{" "}      
+              <div className="card" style={{height:"450px"}}>
+              <div className="card-header flex-center"  style={{color:"black"}}>Precio: {price}</div>
+              <div style={{display:"flex", justifyContent: "center"}}><img  className="card-img card-img-products"  src={image} alt={name} /></div>
+              <div className="card-body flex-center">
+                <p style={{color:"black", fontWeight:"bold"}}>{name}</p>  
               </div>
-               
-            </Card>
-          </CardGroup>
+              <div className="flex-center" style={{marginBottom:"3px"}}>
+                <Button  variant="dark">Ver más</Button>{" "} 
+              </div>
+            </div>
+
         
         </Link>
           ))}
