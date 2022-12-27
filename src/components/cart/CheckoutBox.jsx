@@ -5,8 +5,15 @@ import { useContext, useState } from "react";
 
 export const CheckoutBox = () =>{
 
+<<<<<<< HEAD
     const {isLogged} = useContext(LoginContext);
     const [formEnv, setformEnv] = useState(false)
+=======
+const {isLogged} = useContext(LoginContext);
+   const [formEnv, setformEnv] = useState(false)
+
+  
+>>>>>>> e0b00ffd3e54d6764f323a243c8bb4d6ea7b8d77
 
 return isLogged
     ?
