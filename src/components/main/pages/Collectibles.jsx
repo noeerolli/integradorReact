@@ -21,7 +21,7 @@ export const Collectibles =()=>{
         
       <h1 className="title">Coleccionables</h1>
 
-      <Row xs={1} md={2} lg={4} className="g-2">
+      <Row xs={1} md={2} lg={4} className="g-4">
     
         {category.map(({id,name, price, image, description}) => (
 
@@ -39,7 +39,7 @@ export const Collectibles =()=>{
                 <div className="card-body flex-center ">
                   <p style={{color:"black", fontWeight:"bold"}}>{name}</p>     
                 </div>
-                <div className="flex-center" style={{marginBottom:"3px"}}>
+                <div className="flex-center" style={{marginBottom:"15px"}}>
                   <Button variant="dark">Ver más</Button>{" "}
                 </div>
               </div>

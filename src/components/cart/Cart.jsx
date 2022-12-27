@@ -5,7 +5,7 @@ import { Button, ListGroup } from "react-bootstrap"
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 import '../cart/cart.css';
-import { useState } from "react";
+
 
 
 
@@ -20,20 +20,20 @@ export const Cart = () =>{
         return(
 
           
-            <div>
+            <div style={{marginTop: "4em", marginBottom:"4em"}}>
                 <div>
                     <h1 className="title">Carrito</h1>
                 </div>
-              
+                <div>
                 {products.map(({id, name, image, price, numProducts})=>
                  
-                    <div  style={{margin: "2em"}}  key={id}>
+                    <div style={{marginTop: "1em", marginLeft:"2em", marginRight:"2em"}}  key={id}>
+                       
+                       
                         <ListGroup as="ul">
 
-                            <ListGroup.Item
-                                as="li"
-                                className="d-flex justify-content-between"
-                                
+                            <div id="cart-items" className='list-group-item d-flex justify-content-between' 
+                                as="li"  
                             >
                                 <img style={{width: "12em"}} src={image} alt={id}></img>
                                 <div className="cart-detail">
@@ -42,16 +42,17 @@ export const Cart = () =>{
                                     <p>Total: {price*numProducts} </p> 
                                 </div>
                             
-                                <div style={{display:"flex", alignContent:"center"}}>
+                                <div  className="flex-center" style={{display:"flex", alignContent:"center"}}>
                                     <Button className="deleteBtn">Eliminar</Button>
                                         
                                        
                                 </div>
 
-                            </ListGroup.Item>
+                            </div>
             
 
                         </ListGroup>
+                      
                     
                     </div>
                     
@@ -68,7 +69,9 @@ export const Cart = () =>{
                 </div>
 
             </div>
+            </div>
         )
+        
     }
     else{
         return(

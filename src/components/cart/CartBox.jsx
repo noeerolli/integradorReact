@@ -35,7 +35,7 @@ export const CartBox = ({products}) => {
                     <button style={{marginLeft:".3em"}} onClick={add}>+</button>
                 </div>
                 
-                <h5 style={{marginTop:"1em"}}>Total: {sumProd} </h5>
+                <p style={{marginTop:"1em", fontWeight:"bold"}}>Total: {sumProd} </p>
            </div>
 
             

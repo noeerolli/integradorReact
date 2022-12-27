@@ -1,0 +1,15 @@
+
+@media (max-width: 750px) {
+
+    #nav-login{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #cart-icon{
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 8px;
+    }
+   
+}
