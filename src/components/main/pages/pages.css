@@ -79,6 +79,7 @@ a:hover{
 
 .card-detail{
     flex-direction: column;
+    margin: 1em;
 }
 
 }
