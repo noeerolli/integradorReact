@@ -1,7 +1,7 @@
 
 import { useContext } from "react";
 import { Button, ListGroup } from "react-bootstrap"
-import { FaTrashAlt } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 import '../cart/cart.css';
@@ -12,18 +12,11 @@ import { useState } from "react";
 export const Cart = () =>{
 
     const {products} = useContext(CartContext);
-
-    const [totalProducts, setTotalProducts] = useState(0)
-
-        function add(){
-            setTotalProducts(products.price*products.numProducts)
-        }
-    
-
+ 
    
     if(products.length > 0){
 
-        
+       
         return(
 
           
@@ -31,11 +24,9 @@ export const Cart = () =>{
                 <div>
                     <h1 className="title">Carrito</h1>
                 </div>
-
-
-
+              
                 {products.map(({id, name, image, price, numProducts})=>
-                  
+                 
                     <div  style={{margin: "2em"}}  key={id}>
                         <ListGroup as="ul">
 
@@ -52,7 +43,9 @@ export const Cart = () =>{
                                 </div>
                             
                                 <div style={{display:"flex", alignContent:"center"}}>
-                                    <Button className="deleteBtn"><FaTrashAlt/>Eliminar</Button> 
+                                    <Button className="deleteBtn">Eliminar</Button>
+                                        
+                                       
                                 </div>
 
                             </ListGroup.Item>
@@ -65,7 +58,7 @@ export const Cart = () =>{
                 )}
 
                 <div className="total-purchase" >
-                    <p className="total-purchase-p">Total: {totalProducts}</p>
+                    <p className="total-purchase-p">Total: {}</p>
                 </div>
                 
                 <div style={{margin: "2em"}}>

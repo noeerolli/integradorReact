@@ -1,74 +1,95 @@
+import { Formik,Form, Field, ErrorMessage } from "formik"
 import { useState } from "react"
 
 
 
-const initialState = {name: "", email: "", message: ""}
 
+export const Contact = () => {
 
-export const Contact =()=>{
+    const [formEnv, setformEnv] = useState(false);
 
-    const [form, setForm] = useState(initialState)
+    return (
 
-    const handleInput = (e) => {
-        const {name, value } = e.target
-        setForm({...form, [name]: value})
-    }
+        <div className=" d-block bg-white w-50 h-75 align-content-center justify-content-center m-auto border-warning rounded">
 
-    const handleClick = (e) =>{
-        e.preventDefault()
-        console.log(form);
-    }
+            <h1 className="title text-dark mt-5 ">Contacto</h1>
 
+            <Formik
+                initialValues={{
+                    nombre: '',
+                    correo: '',
+                    comentario: ''
+                }}
 
-    return(
+                validate={(valores) => {
+                    let errores = {}
+                    //Validacion del campo nombre
+                    if (!valores.nombre) {
+                        errores.nombre = 'Debe ingresar nombre'
+                    } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
+                        errores.nombre = 'El nombre solo puede contener letras y espacios'
+                    }
 
-        <div>
+                    if (!valores.correo) {
+                        errores.correo = 'Ingrese un correo'
+                    } else if (! /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(valores.correo)) {
+                        errores.correo = 'El correo solo puede contener letras, puntos, guiones'
+                    }
 
-            <h1 className="title">Contacto</h1>
-        
-            <form name="contactForm" className="contact">
+                    return errores;
 
-                <input
-                    name="name"
-                    value={form.name}
-                    type="text"
-                    className="form-control mb-3"
-                    placeholder="Nombre"
-                    onChange={handleInput}
-                />
-            
-            <input
-                    name="email"
-                    value={form.email}
-                    type="email"
-                    className="form-control mb-3"
-                    placeholder="Email"
-                    onChange={handleInput}
-                />
+                }}
+                onSubmit={(valores, { resetForm }) => {
+                    resetForm();
+                    setformEnv(true);
+                    setTimeout(() => setformEnv(false), 5000)
+                }}
 
+            >
+                {({ errors }) => (
+                    <Form>
 
-                <textarea
-                    name="message"
-                    value={form.message}
-                    type="textarea"
-                    className="textarea"
-                    placeholder="Escriba su mensaje"
-                    rows ={5}
-                    cols={5}
-                    onChange={handleInput}
-                    
+                        <div className="mb-3 ms-3 me-2">
+                            <label className="form-label fs-5 fw-bold">Nombre</label>
 
-                />
+                            <Field
+                                name='nombre'
+                                type='text'
+                                className='form-control'
+                                placeholder='Ingrese su nombre'
+                            />
+                            <ErrorMessage name='nombre' component={() => (
+                                <div className="text-danger fw-bold">{errors.nombre}</div>
+                            )} />
+                        </div>
 
+                        <div className=" mb-3 ms-3 me-2">
+                            <label className="form-label fs-5 fw-bold">Correo</label>
 
-                <button className="btn btn-outline-light"
-            
-                onClick={handleClick}
-                >Enviar</button>
+                            <Field type='text'
+                                name='correo'
+                                className='form-control'
+                                placeholder='miCorreo@correo.com' />
+                            <ErrorMessage name='correo' component={() => (
+                                <div className="text-danger fw-bold">{errors.correo}</div>
+                            )} />
+                        </div>
 
+                        <div className=" mb-3 ms-3 me-2">
+                            <label className="form-label fs-5 fw-bold">Comentario</label>
+                            <Field
+                                className='form-control' rows="5" minLength="1" maxLength="240 "
+                                name='comentario'
+                                as='textarea'
+                                placeholder='Mensaje'
+                            />
+                        </div>
+                        <button type="submit" className="btn btn-primary mb-4 ms-3 ">Enviar</button>
+                        {formEnv && <p className="text-center text-success fw-bold">Enviado</p>}
+                    </Form>
+                )}
 
-
-            </form>
+            </Formik>
         </div>
     )
 }

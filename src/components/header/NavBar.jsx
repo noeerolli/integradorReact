@@ -30,8 +30,8 @@ export const NavBar =()=>{
                       <Link to= "/collectibles"  > Coleccionables </Link>
                     </NavDropdown.Item>
                    
-                                       <NavDropdown.Item >
-                    <Link to= "/clothing"  > Indumentaria </Link>
+                    <NavDropdown.Item >
+                      <Link to= "/clothing"  > Indumentaria </Link>
                     </NavDropdown.Item>
                     
                    
