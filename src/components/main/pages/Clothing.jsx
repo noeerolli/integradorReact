@@ -28,7 +28,7 @@ let category = productsData.filter((item)=>item.category === 'indumentaria')
 
         <Row xs={1} md={2} lg={4} className="g-4">
   
-        {category.map(({id,name, price, image, description}) => (
+        {category.map(({id,name, price, image}) => (
 
         <Link
           key = {id}
@@ -37,9 +37,9 @@ let category = productsData.filter((item)=>item.category === 'indumentaria')
 
               <div className="card" style={{height:"450px"}}>
               <div className="card-header flex-center"  style={{color:"black"}}>Precio: {price}</div>
-              <div style={{display:"flex", justifyContent: "center"}}><img  className="card-img card-img-products"  src={image} alt={name} /></div>
+              <div style={{display:"flex", justifyContent: "center"}}><img  className="card-img card-img-clothing"  src={image} alt={name} /></div>
               <div className="card-body flex-center">
-                <p style={{color:"black", fontWeight:"bold"}}>{name}</p>  
+                <h5 style={{color:"black", fontWeight:"bold"}}>{name}</h5>  
               </div>
               <div className="flex-center" style={{marginBottom:"15px"}}>
                 <Button  variant="dark">Ver más</Button>{" "} 

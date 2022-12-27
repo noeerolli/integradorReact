@@ -25,19 +25,22 @@ export const NavBar =()=>{
             <Nav id='menu' className="me-auto d-flex align-items-center">
 
                 <Logo/>
-                <NavDropdown title="Productos" id="collasible-nav-dropdown" >
-                    <NavDropdown.Item >
-                      <Link  className='flex-center' to= "/collectibles"> Coleccionables </Link>
-                    </NavDropdown.Item>
-                   
-                      <Link className='flex-center' to= "/clothing"> Indumentaria </Link>
-                    <NavDropdown.Item >
-                    </NavDropdown.Item>
+                <NavDropdown title="Productos"  id="collasible-nav-dropdown" >
+
+                    <div >
+                      <Link   className='flex-center' style={{color:"black"}} to= "/collectibles"> Coleccionables </Link>
+                    </div>
+                      
+                    <div >
+                         <Link className='flex-center' style={{color:"black"}}  to= "/clothing"> Indumentaria </Link>
+                    </div>
                 
-                    
                 </NavDropdown>
 
+                
                 <Link to="/contact" style={{color:"white"}}><Nav>Contacto</Nav></Link>
+                
+                
                 
             </Nav>
 

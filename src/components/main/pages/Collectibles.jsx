@@ -37,7 +37,7 @@ export const Collectibles =()=>{
                   <img  className="card-img card-img-product"  src={image} alt={name} />
                 </div>
                 <div className="card-body flex-center ">
-                  <p style={{color:"black", fontWeight:"bold"}}>{name}</p>     
+                  <h5 style={{color:"black", fontWeight:"bold"}}>{name}</h5>     
                 </div>
                 <div className="flex-center" style={{marginBottom:"15px"}}>
                   <Button variant="dark">Ver más</Button>{" "}

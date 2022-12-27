@@ -1,5 +1,5 @@
 .title{
-    color: rgb(253, 241, 80);
+    color: #F1C40F;
     text-align: center;
     margin: 2%;
     margin-bottom: 10%;
@@ -27,14 +27,16 @@ a{
     
 
 }
-/*
-a:hover{
-   #rgb(204, 216, 30)
-}*/
 
 .card-img-products{
     height: 271px;
     width: 271px;
+    object-fit: cover;
+}
+
+.card-img-clothing{
+    height: 200px;
+    width: 200px;
     object-fit: cover;
 }
 

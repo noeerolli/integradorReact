@@ -50,4 +50,3 @@ export const CartBox = ({products}) => {
     )
 }
 
-//deberían ubicarse un item debajo del otro en el cart al comprar varios pero no está pasando, solo muestra 1
