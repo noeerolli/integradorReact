@@ -3,7 +3,7 @@ import { Button, Container, Form } from "react-bootstrap";
 import { LoginContext } from "./LoginContext";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-
+import "../login/login.css"
 
 
 
@@ -40,10 +40,10 @@ export const SignUp = () =>{
 
     return(
 
-        <div style={{marginTop:"8em"}}>
+        <div className="login-container"  style={{marginTop:"8em"}}>
             <Container>
 
-                <h2 style={{color: "white", marginBottom: "2em"}}>Registro</h2>
+                <h2 style={{color: "white", marginBottom: "1em"}}>Registro</h2>
                 <Form>
                 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -59,7 +59,7 @@ export const SignUp = () =>{
                             Registrarme
                         </Button>
 
-                        <p style={{color:"white"}}>Ya tengo cuenta <Link to = {"/login"}>Loguearme</Link></p>
+                        <p style={{color:"white"}}>Ya tengo cuenta <Link to = {"/login"} style={{textDecoration:"underline", color:"#F1C40F"}}>Loguearme</Link></p>
                     
                     
                 </Form>
