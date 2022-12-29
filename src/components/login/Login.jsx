@@ -5,7 +5,7 @@ import { Link} from "react-router-dom";
 import { LoginContext } from "./LoginContext";
 import { FcGoogle } from "react-icons/fc";
 import { Home } from "../main/home/Home";
-
+import "../login/login.css"
 
 
 export const Login = () =>{
@@ -43,12 +43,12 @@ export const Login = () =>{
 
     return isLogged ? <Home/> :
 
-        <div style={{marginTop:"8em"}}>
+        <div className="login-container">
             <Container>
                 <Form >
                     <h2 style={{color: "white" }}>Login</h2>
 
-                    <p style={{color:"white"}}>No tenés una cuenta <Link to = "/signUp" >Registrate</Link></p> 
+                    <p style={{color:"white"}}>No tenés una cuenta <Link to = "/signUp" style={{textDecoration:"underline", color:"#F1C40F"}} >Registrate</Link></p> 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control  name="mail" type="email" placeholder="Email" onChange={handleInput} />
                     </Form.Group>

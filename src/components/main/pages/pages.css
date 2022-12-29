@@ -1,14 +1,8 @@
 .title{
-    color: rgb(253, 241, 80);
+    color: #F1C40F;
     text-align: center;
     margin: 2%;
     margin-bottom: 10%;
-}
-
-.card-img-top{
-    height: 60%;
-    width: 100%;
-    
 }
 
 
@@ -34,36 +28,48 @@ a{
 
 }
 
-a:hover{
-   /*#rgb(204, 216, 30)*/
+.card-img-products{
+    height: 271px;
+    width: 271px;
+    object-fit: cover;
 }
 
-
-
-.imgContainer{
-    
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-img{
-    width: 100%;
-    height:auto;
+.card-img-clothing{
+    height: 200px;
+    width: 200px;
     object-fit: cover;
 }
 
 
 .card-text{
-    margin-top: 5%;
+    margin-top: 2%;
 }
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
 
 .card-body :hover{
     text-decoration: none;
+      
+}
+
+
+.card-button{
+    height: 5%;
     
 }
 
+
+.card-detail{
+    display: flex;
+    flex-direction: row;
+    margin: 4em;
+}
 
 
 @media (max-width: 750px) {
@@ -73,5 +79,9 @@ a:hover{
     
 }
 
+.card-detail{
+    flex-direction: column;
+    margin: 1em;
+}
 
 }

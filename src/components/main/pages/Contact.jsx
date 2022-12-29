@@ -10,7 +10,7 @@ export const Contact = () => {
 
     return (
 
-        <div className=" d-block bg-white w-50 h-75 align-content-center justify-content-center m-auto border-warning rounded">
+        <div className=" d-block bg-white w-50 h-75 align-content-center justify-content-center m-auto border-warning rounded ">
 
             <h1 className="title text-dark mt-5 ">Contacto</h1>
 

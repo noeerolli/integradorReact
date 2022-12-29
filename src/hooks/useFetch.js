@@ -20,7 +20,6 @@ export const useFetch =(route = undefined, id=false)=>{
           datos = id ? datos.find(product => product.id === id) : datos
     
           setproductsData(datos)
-          console.log(datos)
           setLoading(false)
         })
 

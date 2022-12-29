@@ -35,7 +35,7 @@ export const CartBox = ({products}) => {
                     <button style={{marginLeft:".3em"}} onClick={add}>+</button>
                 </div>
                 
-                <h5 style={{marginTop:"1em"}}>Total: {sumProd} </h5>
+                <p style={{marginTop:"1em", fontWeight:"bold"}}>Total: {sumProd} </p>
            </div>
 
             
@@ -50,4 +50,3 @@ export const CartBox = ({products}) => {
     )
 }
 
-//deberían ubicarse un item debajo del otro en el cart al comprar varios pero no está pasando, solo muestra 1
