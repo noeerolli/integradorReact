@@ -7,13 +7,12 @@ export const CartBox = ({products}) => {
 
     const [counter, setCounter] = useState(0);
     
-
     const {addProduct} = useContext(CartContext);
-    
+
     const sumProd = products.price*counter;
 
     function add(){
-        setCounter(counter + 1);  //restringir de acuerdo al stock en base de datos
+        setCounter(counter + 1); 
         
     }
 

@@ -9,7 +9,7 @@ import '../cart/cart.css';
 
 export const Cart = () =>{
 
-    const {products} = useContext(CartContext);
+    const { products, removeProduct} = useContext(CartContext);
  
    
     if(products.length > 0){
@@ -40,10 +40,11 @@ export const Cart = () =>{
                                     </div>
                                 
                                     <div  className="flex-center" style={{display:"flex", alignContent:"center"}}>
-                                        <Button className="deleteBtn">Eliminar</Button>
+                                        <Button className="deleteBtn" onClick={()=>removeProduct(id, numProducts)}>Eliminar</Button>
                                             
                                         
                                     </div>
+                                  
 
                                 </div>
                 
@@ -55,8 +56,8 @@ export const Cart = () =>{
                         
                     )}
 
-                    <div className="total-purchase" >
-                        <p className="total-purchase-p">Total: {}</p>
+                    <div className="total-purchase-container" >
+                        <p className="total-purchase">Total: {}</p>
                     </div>
                     
                     <div style={{margin: "2em"}}>
@@ -74,7 +75,7 @@ export const Cart = () =>{
         return(
             <div className="container empty-cart">
                 <div className="empty">
-                <p style={{color: "black"}}>El carrito se encuentra vacío. <Link style={{textDecoration:"underline", color:"#F1C40F", backgroundColor:"black", borderRadius:"0.375rem", padding:"6px"}}>Agregar productos</Link> </p> 
+                <p style={{color: "black"}}>El carrito se encuentra vacío. <Link to="/" style={{textDecoration:"underline", color:"#F1C40F", backgroundColor:"black", borderRadius:"0.375rem", padding:"6px"}}>Agregar productos</Link> </p> 
                 </div>
             </div>
         )
@@ -83,9 +84,3 @@ export const Cart = () =>{
 
 
 
-
-
-//funcionalidad del boton eliminar
-
-
-//seguir comprando??

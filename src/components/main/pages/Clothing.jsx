@@ -28,15 +28,15 @@ let category = productsData.filter((item)=>item.category === 'indumentaria')
 
         <Row xs={1} md={2} lg={4} className="g-4">
   
-        {category.map(({id,name, price, image}) => (
+        {category.map(({id,name, price, image, currency}) => (
 
         <Link
           key = {id}
           to = {`/items/${id}`}
         >
 
-              <div className="card" style={{height:"450px"}}>
-              <div className="card-header flex-center"  style={{color:"black"}}>Precio: {price}</div>
+            <div className="card" style={{height:"450px"}}>
+              <div className="card-header flex-center"  style={{color:"black"}}> Precio: {currency}{price}</div>
               <div style={{display:"flex", justifyContent: "center"}}><img  className="card-img card-img-clothing"  src={image} alt={name} /></div>
               <div className="card-body flex-center">
                 <h5 style={{color:"black", fontWeight:"bold"}}>{name}</h5>  
