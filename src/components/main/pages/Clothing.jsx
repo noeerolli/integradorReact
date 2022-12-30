@@ -3,6 +3,7 @@ import { collection } from "firebase/firestore/lite"
 import { firebaseDb } from "../../../firebase/config"
 import { useFetch } from "../../../hooks/useFetch"
 import { Link } from "react-router-dom"
+import { Card } from "./Card"
 
 
 export const Clothing =()=>{
@@ -35,16 +36,7 @@ let category = productsData.filter((item)=>item.category === 'indumentaria')
           to = {`/items/${id}`}
         >
 
-            <div className="card" style={{height:"450px"}}>
-              <div className="card-header flex-center"  style={{color:"black"}}> Precio: {currency}{price}</div>
-              <div style={{display:"flex", justifyContent: "center"}}><img  className="card-img card-img-clothing"  src={image} alt={name} /></div>
-              <div className="card-body flex-center">
-                <h5 style={{color:"black", fontWeight:"bold"}}>{name}</h5>  
-              </div>
-              <div className="flex-center" style={{marginBottom:"15px"}}>
-                <Button  variant="dark">Ver más</Button>{" "} 
-              </div>
-            </div>
+              <Card id={id} name={name} price={price} image={image} currency={currency} />
 
         
         </Link>
