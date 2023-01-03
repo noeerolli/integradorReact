@@ -7,46 +7,52 @@ import { firebaseDb } from "../../../firebase/config";
 
 
 
-export const ItemDetails = () =>{
+export const ItemDetails = () => {
 
     const productsDb = collection(firebaseDb, 'productos')
 
-    const {id} = useParams();
+    const { id } = useParams();
 
-    const{productsData: item} = useFetch(productsDb, id)  
+    const { productsData: item } = useFetch(productsDb, id)
 
 
-    return(
-        <div>
+    return (<>
 
-            <h1 className="title" style={{marginTop:"2em", marginBottom: "2em"}}>Detalles del producto</h1>
+        <h1 className="title mb-2 mt-2">Detalles del producto</h1>
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="d-flex flex-row m-3 mt-5 border border-warning rounded bg-white">
 
-                
-            <div className="card card-detail"  >
-                    
-                <div className="imgContainer flex-center" style={{display:"flex", flexDirection:"column"}}>
-                    <img className="card-img" src={item.image} alt={item.name} />
-                    <p>Precio: {item.price}</p>
-                </div>
-                    
-                    
-                <div className="card-body" style={{display:"flex", width:"100%", justifyContent:"center"}}>
-                    <div style={{display:"flex", flexDirection:"column", width:"100%", textAlign:"center"}}>
-                        <div className ='card-title'>{item.name}</div>
-                        <div className ='card-text'>
-                            {item.description}
-                        </div>
-                        <div className ='card-text'>
-                            {item.details}
+                    <div className="card-body d-flex w-50 my-5 text-center justify-content-center ">
+                        <div>
+                            <img className=" img-fluid " src={item.image} alt={item.name} />
+
+                            <p className="text-center fw-bold fs-5 ">Precio: {item.price}</p>
                         </div>
                     </div>
-                        <CartBox products={item}></CartBox >  
-                </div>
-                    
-            </div>
 
-             
+                    <div className="card-body d-flex w-100 my-5 " >
+                        <div className="d-flex flex-column w-100 text-center fs-2 justify-content-center">
+                            <div className='card-title'>{item.name}</div>
+                            <div className='card-text'>
+                                {item.description}
+                            </div>
+                            <div className='card-text'>
+                                {item.details}
+                            </div>
+                        </div>
+                        <CartBox products={item}></CartBox >
+                    </div>
+                </div>
+            </div>
         </div>
+
+
+
+
+
+
+    </>
     )
 }
 

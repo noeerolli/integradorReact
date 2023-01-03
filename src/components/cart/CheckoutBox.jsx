@@ -1,135 +1,140 @@
 import { LoginContext } from "../login/LoginContext";
 import { Login } from "../login/Login";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useContext, useState } from "react";
+import { useContext } from "react";
+import { DirecEnvio } from "./DirecEnvio";
+import { Pago } from "./Pago";
+import { Link } from "react-router-dom";
 
-export const CheckoutBox = () =>{
 
-const {isLogged} = useContext(LoginContext);
-const [formEnv, setformEnv] = useState(false)
+export const CheckoutBox = () => {
 
-  
+    const { isLogged } = useContext(LoginContext);
 
-return isLogged
-    ?
-   
-        <div className="d-block bg-white w-50 h-100 align-content-center justify-content-center m-auto border border-warning rounded">
-            <div className="text-center ">
 
-                <img className=" img-thumbnail " src="https://img.freepik.com/foto-gratis/anverso-reverso-tarjeta-credito-azul-aislado_125540-651.jpg?auto=format&h=200" alt="" />
+    (function () {
+        'strict'
 
-            </div>
+        let forms = document.querySelectorAll('.needs-validation')
 
-            <div className="mt-4">
-
-                <Formik
-                    initialValues={{
-                        numberT: '',
-                        codigoSeg: '',
-                        nombre:''
-                    }}
-                    validate={(valores) => {
-                        let errores = {};
-                        //validacion del numero de tarjeta
-                        if (valores.numberT.length <= 1) {
-                            errores.numberT = 'Debe ingresar un numero de tarjeta'
-                        } else if (valores.numberT.length < 10 || valores.numberT.length >= 11) {
-                            errores.numberT = 'numero de tarjeta invalido'
-
-                        }
-
-                        //validacion del codigo de seguridad
-
-                        if (valores.codigoSeg.length <= 1) {
-                            errores.codigoSeg = 'Ingrese codigo de seguridad'
-
-                        } else if (valores.codigoSeg.length < 3 || valores.codigoSeg.length >= 4) {
-                            errores.codigoSeg = 'El codigo de seguridad es incotrrecto'
-
-                        }
-
-                        return errores;
-
-                    }}
-                    onSubmit={(valores, { resetForm }) => {
-                        resetForm();
-                        setformEnv(true);
-                        setTimeout(() => setformEnv(false), 5000)
-                    }}
-                >
-
-                    {({ errors }) => (
-                        <Form>
-
-                            <div className="mb-3 ms-3 me-2">
-                                <label
-                                    className="form-label">Numero de tarjeta
-                                </label>
-                                <Field
-                                    name="numberT"
-                                    type="tel"
-                                    className="form-control"
-                                    placeholder="1234 5678 91 "
-                                   
-                                
-                                />
-                                <ErrorMessage name="numberT" component={() => (
-                                    <div className="text-danger fw-bold">{errors.numberT}</div>
-                                )} />
-
-                            </div>
-                            <div className="mb-3 ms-3 me-2">
-                                <label className="form-label">Nombre</label>
-                                <Field 
-                                type="text" 
-                                name="nombre"
-                                className="form-control" 
-                                placeholder="Mariel Gonzalez" 
-                              />
-                                <div className="form-text">Tal cual como figura en tu tarjeta</div>
-                            </div>
-
-                            <div className="mb-3 ms-3 me-2">
-                                <label className="form-label">Fecha de vencimiento</label>
-                                <input type="month" className="form-control" />
-
-                            </div>
+        Array.prototype.slice.call(forms)
+            .forEach(
+                function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                            event.defaultChecked()
                             
-                            <div className="mb-3 ms-3 me-2">
-                                <label className="form-label">codigo de seguridad</label>
-                                <Field
-                                    name="codigoSeg"
-                                    type="password"
-                                    className="form-control"
-                                    placeholder="000"
-                                />
+                        }
 
-                                <ErrorMessage name="codigoSeg" component={() => (
-                                    <div className="text-danger fw-bold">{errors.codigoSeg}</div>
-                                )} />
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+    })()
 
-                            </div>
-                            <div className="mb-3 ms-3 me-2">
-                                <Field name="tarjeta" as="select" className="form-select form-select-sm mb-3 bg-warning" aria-label=".form-select-sm" >
-                                    <option >Tarjeta</option>
-                                    <option value="1">MasterCard</option>
-                                    <option value="2">Visa</option>
-                                    <option value="3">AmericanExpress</option>
-                                </Field>
-                               
-                            </div>
-                            <button className="btn btn-primary ms-3">Pagar</button>
-                            {formEnv && <p className="text-center text-success fw-bold"> Su pago fue relizado con exito </p>}
-                           
-                        </Form>
-                    )}
+    return isLogged
+        ?
 
-                </Formik>
+        <div className="container bg-white mt-5 border border-warning rounded">
+            <div className="container ">
+                <main>
+                    <div className="py-5 text-center">
+                        <img className="d-block mx-auto mb-4 img-thumbnail" src="https://img.freepik.com/foto-gratis/anverso-reverso-tarjeta-credito-azul-aislado_125540-651.jpg?auto=format&h=200" alt="" />
+                        <h2>Pagos</h2>
+                        <p className="lead">Ingrese los datos solicitados tal cual como figuran en su tarjeta</p>
+                    </div>
+
+                    <div className="row g-5">
+                        <div className="col-md-5 col-lg-4 order-md-last">
+                            <h4 className="d-flex justify-content-between align-items-center mb-3">
+                                <span className="text-primary">Tus Productos</span>
+                                <span className="badge bg-primary rounded-pill">3</span>
+                            </h4>
+                            <ul className="list-group mb-3">
+                                <li className="list-group-item d-flex justify-content-between lh-sm">
+                                    <div>
+                                        <h6 className="my-0">Nombre del Producto</h6>
+                                        <small className="text-muted">Breve Descripción</small>
+                                    </div>
+                                    <span className="text-muted">$12</span>
+                                </li>
+                                <li className="list-group-item d-flex justify-content-between lh-sm">
+                                    <div>
+                                        <h6 className="my-0">Segundo producto</h6>
+                                        <small className="text-muted">Brief description</small>
+                                    </div>
+                                    <span className="text-muted">$8</span>
+                                </li>
+                                <li className="list-group-item d-flex justify-content-between lh-sm">
+                                    <div>
+                                        <h6 className="my-0">Tercer Articulo</h6>
+                                        <small className="text-muted">Brief description</small>
+                                    </div>
+                                    <span className="text-muted">$5</span>
+                                </li>
+                                <li className="list-group-item d-flex justify-content-between bg-light">
+                                    <div className="text-success">
+                                        <h6 className="my-0">Codigo de Promoción</h6>
+                                        <small>QhRtBDL</small>
+                                    </div>
+                                    <span className="text-success">−$5</span>
+                                </li>
+                                <li className="list-group-item d-flex justify-content-between">
+                                    <span>Total (USD)</span>
+                                    <strong>$20</strong>
+                                </li>
+                            </ul>
+
+                            <form className="card p-2">
+                                <div className="input-group">
+                                    <input type="text" className="form-control" placeholder="Promo code" />
+                                    <button type="submit" className="btn btn-secondary">Aplicar</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div className="col-md-7 col-lg-8">
+                            <h4 className="mb-3">Dirección de envio</h4>
+                            <form className="needs-validation" noValidate>
+
+                                <DirecEnvio onChange={event => event.target.value.defaultChecked} />
+
+                                <hr className="my-4" />
+
+                                <div className="form-check">
+                                    <input type="checkbox" className="form-check-input" id="same-address" />
+                                    <label className="form-check-label" id="same-address" htmlFor="same-address">La direccion de envio es la misma que mi direccion de facturacion</label>
+                                </div>
+
+                                <div className="form-check">
+                                    <input type="checkbox" className="form-check-input" id="save-info" />
+                                    <label className="form-check-label" id="save-info" htmlFor="save-info">Guardar la informacion para la proxima vez</label>
+                                </div>
+
+                                <hr className="my-4" />
+
+                                <h4 className="mb-3">Pago</h4>
+
+                                <Pago onChange={event => event.target.value} />
+
+                                <hr />
+
+                                <button className="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+                            </form>
+                        </div>
+                    </div>
+                </main>
+
+                <footer className="my-5 pt-5 text-muted text-center text-small">
+                    <p className="mb-1">&copy; 2017–2021 Company Name</p>
+                    <ul className="list-inline">
+                        <li className="list-inline-item"><Link to="#">Privacy</Link ></li>
+                        <li className="list-inline-item"><Link to="#">Terms</Link ></li >
+                        <li className="list-inline-item"><Link to="#">Support</Link ></li >
+                    </ul>
+                </footer>
             </div>
-
         </div>
+        : <Login />
 
-    : <Login/>
-  
 
 }

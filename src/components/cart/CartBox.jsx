@@ -27,12 +27,12 @@ export const CartBox = ({products}) => {
         <div className="cart-box">
 
             <div style={{justifyContent:"center"}}>
-                <div >
-                    <button style={{marginRight:".3em"}} onClick={remove}>-</button> {/*centrar estos botones*/}
+                <div className="text-center" >
+                    <button className="rounded-circle bg-warning " style={{marginRight:".3em"}} onClick={remove}>+</button> {/*centrar estos botones*/}
                     <Badge bg="dark"  pill>
                         {counter}
                     </Badge>
-                    <button style={{marginLeft:".3em"}} onClick={add}>+</button>
+                    <button className="rounded-circle " style={{marginLeft:".3em"}} onClick={add}>+</button>
                 </div>
                 
                 <p style={{marginTop:"1em", fontWeight:"bold"}}>Total: {sumProd} </p>
