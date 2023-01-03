@@ -29,11 +29,24 @@ export const CartProvider = ({children}) =>{
 
 
 
+    function removeProduct(id, numProducts){ 
+       
+        setProducts(products.filter((item) => {
+                return item.id !== id;
+            })
+        )
+        setCartCounter(cartCounter - numProducts)
+    }
+
+
+
     return(
         <CartContext.Provider value={{
             addProduct,
+            removeProduct,
             cartCounter,
             products,
+        
             
         }}>
             {children}
