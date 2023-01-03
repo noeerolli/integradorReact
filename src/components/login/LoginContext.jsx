@@ -14,7 +14,7 @@ export const  LoginProvider = ({children}) =>{
 
     
     async function firebaseLogin(user){
-        console.log(user)
+        
         const { displayName, email, uid} = await user;
         
         if (email && uid){
@@ -29,9 +29,7 @@ export const  LoginProvider = ({children}) =>{
            
             
         }
-
-        console.log(user)
-        
+    
         
     }
 

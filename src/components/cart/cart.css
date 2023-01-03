@@ -33,13 +33,13 @@
 }
 
 
-.total-purchase{
+.total-purchase-container{
    display: flex;
    justify-content: center;
    
 }
 
-.total-purchase-p{
+.total-purchase{
     background-color:white;
     color:black;
     height: 2em;
