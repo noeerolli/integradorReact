@@ -10,8 +10,6 @@ export const CartProvider = ({children}) =>{
     const [total, setTotal] = useState(0)  
 
         
-   console.log(total)
-    
     function addProduct (value, product, sumProd){
 
       
@@ -29,13 +27,14 @@ export const CartProvider = ({children}) =>{
 
 
 
-    function removeProduct(id, numProducts){ 
+    function removeProduct(id, numProducts, price){ 
        
         setProducts(products.filter((item) => {
                 return item.id !== id;
             })
         )
         setCartCounter(cartCounter - numProducts)
+        setTotal(total - (numProducts*price))
     }
 
 

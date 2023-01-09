@@ -10,9 +10,11 @@ import '../cart/cart.css';
 export const Cart = () =>{
 
     const { products, total, removeProduct} = useContext(CartContext);
- 
+    
    
     if(products.length > 0){
+
+        
 
        
         return(
@@ -23,6 +25,8 @@ export const Cart = () =>{
                 </div>
                 <div>
                     {products.map(({id, name, image, price, numProducts})=>
+
+                    
                     
                         <div style={{marginTop: "1em", marginLeft:"2em", marginRight:"2em"}}  key={id}>
                         
@@ -36,11 +40,11 @@ export const Cart = () =>{
                                     <div className="cart-detail">
                                         <div className="fw-bold">Product:{name}</div>
                                         <div>Precio: ${price}- Cantidad: {numProducts}</div>
-                                        <p>Total: ${price*numProducts} </p> 
+                                        <p className="fw-bold">Total: ${price*numProducts} </p> 
                                     </div>
                                 
                                     <div  className="flex-center" style={{display:"flex", alignContent:"center"}}>
-                                        <Button className="deleteBtn" onClick={()=>removeProduct(id, numProducts)}>Eliminar</Button>
+                                        <Button className="deleteBtn" onClick={()=>removeProduct(id, numProducts, price)}>Eliminar</Button>
                                             
                                         
                                     </div>
@@ -57,7 +61,7 @@ export const Cart = () =>{
                     )}
 
                     <div className="total-purchase-container" >
-                        <p className="total-purchase">Total: ${total}</p>
+                        <p className="total-purchase fw-bold">Total: ${total}</p>
                     </div>
                     
                     <div style={{margin: "2em"}}>

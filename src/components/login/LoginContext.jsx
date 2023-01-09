@@ -37,7 +37,7 @@ export const  LoginProvider = ({children}) =>{
     function login(){
 
         setIsLogged(true);
-        console.log("ingresaste correctamente")
+        
 
     }
 

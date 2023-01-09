@@ -5,7 +5,7 @@ import swal from "sweetalert";
 import "../../components/login/login.css";
 
 function userProfile(user){
-    console.log(user);
+
 
         const {displayName, email, uid} = user;
         return{displayName, email, uid};
