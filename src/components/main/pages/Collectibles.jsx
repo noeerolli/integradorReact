@@ -24,7 +24,7 @@ export const Collectibles = () => {
 
       <Row xs={1} md={2} lg={4} className="g-4">
 
-        {category.map(({ id, name, price, image, currency, description }) => (
+        {category.map(({ id, name, price, image, detail, currency, description }) => (
 
           <Link
             key={id}

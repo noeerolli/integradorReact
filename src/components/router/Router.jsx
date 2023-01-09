@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom"
-import { Cart } from "../cart/Cart"
-import { CheckoutBox } from "../cart/CheckoutBox"
-import { Login } from "../login/Login"
-import { SignUp } from "../login/SignUp"
-import { Home } from "../main/home/Home"
-import { Clothing } from "../main/pages/Clothing"
 import { Collectibles } from "../main/pages/Collectibles"
-import { Contact } from "../main/pages/Contact"
+import { CheckoutBox } from "../cart/CheckoutBox"
 import { ItemDetails } from "../main/pages/ItemDetails"
+import { Clothing } from "../main/pages/Clothing"
+import { Contact } from "../main/pages/Contact"
+import { SignUp } from "../login/SignUp"
+import { Login } from "../login/Login"
+import { Home } from "../main/home/Home"
+import { Cart } from "../cart/Cart"
 
 export const Router = () =>{
     return(

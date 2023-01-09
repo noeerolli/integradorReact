@@ -4,12 +4,13 @@ import { useContext } from "react";
 import { DirecEnvio } from "./DirecEnvio";
 import { Pago } from "./Pago";
 import { Link } from "react-router-dom";
+import { CartContext } from "./CartContext";
 
 
 export const CheckoutBox = () => {
 
     const { isLogged } = useContext(LoginContext);
-
+    const {products, cartCounter, total} = useContext(CartContext);
 
     (function () {
         'strict'
@@ -48,30 +49,21 @@ export const CheckoutBox = () => {
                         <div className="col-md-5 col-lg-4 order-md-last">
                             <h4 className="d-flex justify-content-between align-items-center mb-3">
                                 <span className="text-primary">Tus Productos</span>
-                                <span className="badge bg-primary rounded-pill">3</span>
+                                <span className="badge bg-primary rounded-pill">{cartCounter}</span>
                             </h4>
-                            <ul className="list-group mb-3">
-                                <li className="list-group-item d-flex justify-content-between lh-sm">
-                                    <div>
-                                        <h6 className="my-0">Nombre del Producto</h6>
-                                        <small className="text-muted">Breve Descripción</small>
-                                    </div>
-                                    <span className="text-muted">$12</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between lh-sm">
-                                    <div>
-                                        <h6 className="my-0">Segundo producto</h6>
-                                        <small className="text-muted">Brief description</small>
-                                    </div>
-                                    <span className="text-muted">$8</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between lh-sm">
-                                    <div>
-                                        <h6 className="my-0">Tercer Articulo</h6>
-                                        <small className="text-muted">Brief description</small>
-                                    </div>
-                                    <span className="text-muted">$5</span>
-                                </li>
+
+                            {products.map(({id, name, price})=>
+                                <ul className="list-group mb-3">
+                                    <li className="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 className="my-0">{name}</h6>
+                                            <small className="text-muted">Breve Descripción</small>
+                                        </div>
+                                        <span className="text-muted">${price}</span>
+                                    </li>
+                                </ul>
+                            )}
+                            <ul>
                                 <li className="list-group-item d-flex justify-content-between bg-light">
                                     <div className="text-success">
                                         <h6 className="my-0">Codigo de Promoción</h6>
@@ -81,14 +73,14 @@ export const CheckoutBox = () => {
                                 </li>
                                 <li className="list-group-item d-flex justify-content-between">
                                     <span>Total (USD)</span>
-                                    <strong>$20</strong>
+                                    <strong> ${total}</strong>
                                 </li>
                             </ul>
 
                             <form className="card p-2">
                                 <div className="input-group">
-                                    <input type="text" className="form-control" placeholder="Promo code" />
-                                    <button type="submit" className="btn btn-secondary">Aplicar</button>
+                                    <input name="promo" type="text" className="form-control" placeholder="Promo code" />
+                                    <button className="btn btn-secondary">Aplicar</button>
                                 </div>
                             </form>
                         </div>

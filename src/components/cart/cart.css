@@ -29,7 +29,7 @@
 
 .card-title{
     margin-top: 10%;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 
@@ -81,12 +81,18 @@
     user-select: none;
   }
   
+  .rounded-circle{
+    width: 25px;
+    
+}
+
 
 
 @media (max-width: 750px) {
 
     #cart-items{
-        flex-direction: column;    
+        flex-direction: column; 
+        height:100%;   
     }
 
     #cart-items img{
@@ -97,5 +103,5 @@
         margin: auto;
     }
 
-    
+  
 }

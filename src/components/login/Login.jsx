@@ -11,7 +11,7 @@ import "../login/login.css"
 export const Login = () =>{
 
 
-    const {firebaseLogin, waiting, wait, error,isLogged} = useContext(LoginContext);
+    const {firebaseLogin, waiting, wait, error, isLogged} = useContext(LoginContext);
     const [form, setForm] =useState({mail: "", pass:""});
 
 

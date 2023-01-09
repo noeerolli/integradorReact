@@ -9,7 +9,7 @@ import '../cart/cart.css';
 
 export const Cart = () =>{
 
-    const { products, removeProduct} = useContext(CartContext);
+    const { products, total, removeProduct} = useContext(CartContext);
  
    
     if(products.length > 0){
@@ -17,7 +17,7 @@ export const Cart = () =>{
        
         return(
 
-            <div style={{marginTop: "4em", marginBottom:"4em"}}>
+            <div id="detail-container" style={{marginTop: "4em", marginBottom:"4em"}}>
                 <div>
                     <h1 className="title">Carrito</h1>
                 </div>
@@ -30,13 +30,13 @@ export const Cart = () =>{
                             <ListGroup as="ul" >
 
                                 <div id="cart-items" className='list-group-item d-flex justify-content-between' 
-                                    as="li"  style={{height: "180px"}}
+                                    as="li"  
                                 >
-                                    <img style={{width: "12em", objectFit:"cover" }} src={image} alt={id}></img>
+                                    <img style={{width: "12em", height:"12em", objectFit:"cover" }} src={image} alt={id}></img>
                                     <div className="cart-detail">
-                                        <div className="fw-bold">Product:{name} - Id: {id} </div>
-                                        <div>Precio: {price}- Cantidad: {numProducts}</div>
-                                        <p>Total: {price*numProducts} </p> 
+                                        <div className="fw-bold">Product:{name}</div>
+                                        <div>Precio: ${price}- Cantidad: {numProducts}</div>
+                                        <p>Total: ${price*numProducts} </p> 
                                     </div>
                                 
                                     <div  className="flex-center" style={{display:"flex", alignContent:"center"}}>
@@ -57,7 +57,7 @@ export const Cart = () =>{
                     )}
 
                     <div className="total-purchase-container" >
-                        <p className="total-purchase">Total: {}</p>
+                        <p className="total-purchase">Total: ${total}</p>
                     </div>
                     
                     <div style={{margin: "2em"}}>

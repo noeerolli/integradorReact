@@ -55,8 +55,8 @@ export const NavBar =()=>{
                     </Link>
                 </div>
                 <div id='login-buttons'>
-                    <Link to="/login"><Button className='login-button fw-bold' variant="light mx-2" disabled={waiting} >Login</Button ></Link>
-                    <Button className='login-button fw-bold' variant="light mx-2" onClick={logout}>Logout</Button>
+                    <Link to="/login"><Button className='login-button fw-bold' variant="warning mx-2" disabled={waiting} >Login</Button ></Link>
+                    <Button className='login-button fw-bold' variant="warning mx-2" onClick={logout}>Logout</Button>
                 </div>
             </div>
                             

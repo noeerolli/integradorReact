@@ -8,32 +8,37 @@ import "../login/login.css"
 
 
 
+
 export const SignUp = () =>{
 
-    const { waiting, firebaseLogin} = useContext(LoginContext);
+    const { error, wait, waiting, firebaseLogin} = useContext(LoginContext);
     const [form, setForm] =useState({email:'', password:''});
-   
     
-   
+     
     function checkForm(e){
-      
+       
         e.preventDefault();
+        wait();
         const {email, password} = form;
 
         
         if (email !== "" && password !== ""){
-            const user = emailRegistration(email, password);
-            firebaseLogin(user)
+            const user = emailRegistration(email, password, error);
+            firebaseLogin(user)   
             
-            
+        }else{
+            error()
+            alert("error en el registro")
         }
-        
+
 
     }
 
     function handleInput(e){
         const {name, value} = e.target;    // e. target devuelve el elemento que desencadenó el evento
         setForm({...form, [name]:value});
+
+        
     }
 
 
@@ -43,6 +48,7 @@ export const SignUp = () =>{
         <div className="login-container"  style={{marginTop:"8em"}}>
             <Container>
 
+
                 <h2 style={{color: "white", marginBottom: "1em"}}>Registro</h2>
                 <Form>
                 
@@ -51,11 +57,11 @@ export const SignUp = () =>{
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control  name="password" type="password" placeholder="Contraseña minimo 8 carateres" onChange={handleInput} />
+                        <Form.Control  name="password" type="password" placeholder="Contraseña, mínimo 6 caracteres" onChange={handleInput} />
                     </Form.Group>
                     
                     
-                        <Button variant="light" onClick={checkForm} disabled={waiting} >
+                        <Button variant="light" onClick={checkForm} disabled={waiting}>
                             Registrarme
                         </Button>
 

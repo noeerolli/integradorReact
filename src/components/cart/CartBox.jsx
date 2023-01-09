@@ -2,6 +2,7 @@ import { Badge, Button } from "react-bootstrap";
 import { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
 import { Link } from "react-router-dom";
+import "../cart/cart.css"
 
 export const CartBox = ({products}) => {
 
@@ -27,11 +28,11 @@ export const CartBox = ({products}) => {
 
             <div style={{justifyContent:"center"}}>
                 <div className="text-center" >
-                    <button className="rounded-circle bg-warning " style={{marginRight:".3em"}} onClick={remove}>+</button> {/*centrar estos botones*/}
-                    <Badge bg="dark"  pill>
+                    <button className="rounded-circle bg-warning " style={{justifyContent:"center"}} onClick={remove}> - </button> 
+                    <Badge bg="dark"  pill style={{margin:"2px"}}>
                         {counter}
                     </Badge>
-                    <button className="rounded-circle " style={{marginLeft:".3em"}} onClick={add}>+</button>
+                    <button className="rounded-circle "  onClick={add}>+</button>
                 </div>
                 
                 <p style={{marginTop:"1em", fontWeight:"bold"}}>Total: {sumProd} </p>

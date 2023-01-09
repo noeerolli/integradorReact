@@ -27,18 +27,16 @@ export const ItemDetails = () => {
                         <div>
                             <img className=" img-fluid " src={item.image} alt={item.name} />
 
-                            <p className="text-center fw-bold fs-5 ">Precio: {item.price}</p>
+                            <p className="text-center fw-bold fs-sm ">Precio: ${item.price}</p>
                         </div>
                     </div>
 
                     <div className="card-body d-flex w-100 my-5 " >
                         <div className="d-flex flex-column w-100 text-center fs-2 justify-content-center">
                             <div className='card-title'>{item.name}</div>
-                            <div className='card-text'>
-                                {item.description}
-                            </div>
-                            <div className='card-text'>
-                                {item.details}
+                            
+                            <div>
+                                <p className="d-flex text-center fw-light ">{item.detail}</p>
                             </div>
                         </div>
                         <CartBox products={item}></CartBox >

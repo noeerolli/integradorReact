@@ -1,7 +1,8 @@
 
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import {firebaseAuth} from "../config";
-
+import swal from "sweetalert";
+import "../../components/login/login.css";
 
 function userProfile(user){
     console.log(user);
@@ -18,9 +19,6 @@ export const signInWithGoogle = async (error) =>{
     try{
         const result = await signInWithPopup(firebaseAuth, googleProvider)
         
-        console.log(result.user);
- 
-
         return userProfile(result.user);
 
     }
@@ -41,6 +39,11 @@ export const emailRegistration = async (mail, pass, error) =>{
     catch (err){
         error()
         console.log("Error al registrarse:", err)
+        swal({
+            title: "Error en el registro",
+            text: "Asegurate de haber escrito bien el mail - Recordá que la contraseñe debe tener como mínimo 6 caracteres",
+        })
+
     }
 }
 
@@ -54,6 +57,10 @@ export const emailLogin = async (mail, pass, error) =>{
     catch (err){
         error()
         console.log("Error al loguearse:", err)
+        swal({
+            title: "Error en el logueo",
+            text: "Revisá los datos y volvé a intentarlo",
+        })
     }
 }
 

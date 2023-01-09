@@ -11,6 +11,7 @@ export const  LoginProvider = ({children}) =>{
     const [waiting, setWaiting] = useState(false);
     const [user, setUser] = useState(undefined)
    
+   
 
     
     async function firebaseLogin(user){
@@ -53,12 +54,15 @@ export const  LoginProvider = ({children}) =>{
 
     function error(){
         setWaiting(false);
+        
+
     }
 
 
+
     return(
-        <LoginContext.Provider value={{isLogged,  waiting, user, 
-                                       firebaseLogin, login,error, wait, logout
+        <LoginContext.Provider value={{isLogged, waiting, user, 
+                                       firebaseLogin, login, error, wait, logout
         }}>
             {children}
         </LoginContext.Provider>
