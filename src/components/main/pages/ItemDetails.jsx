@@ -21,7 +21,7 @@ export const ItemDetails = () => {
         <h1 className="title mb-2 mt-2">Detalles del producto</h1>
         <div className="container">
             <div className="row justify-content-center">
-                <div className="d-flex flex-row m-3 mt-5 border border-warning rounded bg-white">
+                <div className="d-flex flex-row m-3 mt-5 border border-warning rounded bg-white my-5">
 
                     <div className="card-body d-flex w-50 my-5 text-center justify-content-center ">
                         <div>
@@ -31,12 +31,12 @@ export const ItemDetails = () => {
                         </div>
                     </div>
 
-                    <div className="card-body d-flex w-100 my-5 " >
+                    <div className="card-body d-flex w-100" >
                         <div className="d-flex flex-column w-100 text-center fs-2 justify-content-center">
                             <div className='card-title'>{item.name}</div>
                             
                             <div>
-                                <p className="d-flex text-center fw-light ">{item.detail}</p>
+                                <p className="d-flex text-center fw-light card-text fs-4">{item.detail}</p>
                             </div>
                         </div>
                         <CartBox products={item}></CartBox >
