@@ -32,7 +32,7 @@ export const SearchPage = () => {
 
         setSearchResult(arrayOfItems)
 
-    }, [productsData]);
+    }, [productsData, searchParam]);
 
 
 
