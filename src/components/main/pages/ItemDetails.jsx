@@ -23,7 +23,7 @@ export const ItemDetails = () => {
             <div className="row justify-content-center">
                 <div className="d-flex flex-row m-3 mt-5 border border-warning rounded bg-white my-5">
 
-                    <div className="card-body d-flex w-50 my-5 text-center justify-content-center ">
+                    <div className="card-body d-flex w-50 text-center justify-content-center ">
                         <div>
                             <img className=" img-fluid " src={item.image} alt={item.name} />
 
