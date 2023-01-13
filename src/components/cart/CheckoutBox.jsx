@@ -63,6 +63,7 @@ export const CheckoutBox = () => {
                                     </li>
                                 </ul>
                             )}
+                            
                             <ul>
                                 <li className="list-group-item d-flex justify-content-between bg-light">
                                     <div className="text-success">
@@ -85,6 +86,7 @@ export const CheckoutBox = () => {
                             </form>
                         </div>
                         <div className="col-md-7 col-lg-8">
+
                             <h4 className="mb-3">Dirección de envio</h4>
                             <form className="needs-validation" noValidate>
 

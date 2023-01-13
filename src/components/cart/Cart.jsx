@@ -66,7 +66,11 @@ export const Cart = () =>{
                     
                     <div style={{margin: "2em"}}>
                         <Link to={"/checkout"}>
-                        <Button variant="light ">Checkout</Button>
+                            <Button variant="light">Finalizar compra</Button>
+                        </Link>
+
+                        <Link to="/">
+                            <button className="btn bg-warning m-3">Seguir comprando</button>
                         </Link>
                     </div>
 

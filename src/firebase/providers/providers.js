@@ -1,8 +1,8 @@
 
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import {firebaseAuth} from "../config";
-import swal from "sweetalert";
 import "../../components/login/login.css";
+import Swal from "sweetalert2";
 
 function userProfile(user){
 
@@ -25,7 +25,7 @@ export const signInWithGoogle = async (error) =>{
 
     catch(err){
         error()
-        console.log("Error de autencicación con google:", err)
+        console.log("Error de autenticación con google:", err)
     }
 
 }
@@ -33,15 +33,23 @@ export const signInWithGoogle = async (error) =>{
 export const emailRegistration = async (mail, pass, error) =>{
     try{
         const result = await createUserWithEmailAndPassword(firebaseAuth, mail, pass)
-        
+
+        Swal.fire({
+            title: "Registro Exitoso!",
+            confirmButtonColor: '#F1C40F'
+        })
+            
         return userProfile(result.user)
+
+        
     }
     catch (err){
         error()
         console.log("Error al registrarse:", err)
-        swal({
+        Swal.fire({
             title: "Error en el registro",
-            text: "Asegurate de haber escrito bien el mail - Recordá que la contraseñe debe tener como mínimo 6 caracteres",
+            confirmButtonColor: '#F1C40F',
+            text: "Asegurate de haber escrito bien tu email - Recordá que la contraseña debe tener como mínimo 6 caracteres"
         })
 
     }
@@ -57,9 +65,10 @@ export const emailLogin = async (mail, pass, error) =>{
     catch (err){
         error()
         console.log("Error al loguearse:", err)
-        swal({
+        Swal.fire({
             title: "Error en el logueo",
-            text: "Revisá los datos y volvé a intentarlo",
+            confirmButtonColor: '#F1C40F',
+            text: "Revisá los datos y volvé a intentarlo"
         })
     }
 }

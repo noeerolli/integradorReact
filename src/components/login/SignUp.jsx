@@ -4,44 +4,46 @@ import { LoginContext } from "./LoginContext";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "../login/login.css"
-
+import Swal from "sweetalert2";
 
 
 
 
 export const SignUp = () =>{
 
-    const { error, wait, waiting, firebaseLogin} = useContext(LoginContext);
+    const { error, wait, waiting, firebaseLogin, } = useContext(LoginContext);
     const [form, setForm] =useState({email:'', password:''});
-    
-     
+  
+   
     function checkForm(e){
        
         e.preventDefault();
         wait();
+       
         const {email, password} = form;
 
         
         if (email !== "" && password !== ""){
             const user = emailRegistration(email, password, error);
-            firebaseLogin(user)   
+            firebaseLogin(user); 
             
         }else{
-            error()
-            alert("error en el registro")
+            Swal.fire({
+                title: "Error en el registro, revisa los datos proporcionados",
+                confirmButtonColor: '#F1C40F',
+                
+            })
         }
-
-
-    }
-
-    function handleInput(e){
-        const {name, value} = e.target;    // e. target devuelve el elemento que desencadenó el evento
-        setForm({...form, [name]:value});
 
         
     }
 
 
+    function handleInput(e){
+        const {name, value} = e.target;    // e. target devuelve el elemento que desencadenó el evento
+        setForm({...form, [name]:value});
+       
+    }
 
     return(
 
@@ -60,12 +62,16 @@ export const SignUp = () =>{
                         <Form.Control  name="password" type="password" placeholder="Contraseña, mínimo 6 caracteres" onChange={handleInput} />
                     </Form.Group>
                     
-                    
+                    <div className="d-flex flex-center">
                         <Button variant="light" onClick={checkForm} disabled={waiting}>
                             Registrarme
                         </Button>
+                        <Link to= "/" className="d-flex-row"><button className="btn bg-warning  m-3 " variant="light">
+                            Página principal
+                        </button></Link>
+                    </div>
 
-                        <p style={{color:"white"}}>Ya tengo cuenta <Link to = {"/login"} style={{textDecoration:"underline", color:"#F1C40F"}}>Loguearme</Link></p>
+                    <p style={{color:"white"}}>Ya tengo cuenta <Link to = {"/login"} style={{textDecoration:"underline", color:"#F1C40F"}}>Loguearme</Link></p>
                     
                     
                 </Form>
