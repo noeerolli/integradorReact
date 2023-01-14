@@ -5,6 +5,7 @@ import { NavBar } from './components/header/NavBar';
 import { Router } from './components/router/Router';
 import { CartProvider } from './components/cart/CartContext';
 import { LoginProvider } from './components/login/LoginContext';
+import { Footer } from './components/footer/Footer';
 
 
 
@@ -12,10 +13,11 @@ import { LoginProvider } from './components/login/LoginContext';
 
 function App() {
   return (
-    <LoginProvider> {/* ver si lo acotamos solo al checkuot*/}
+    <LoginProvider>
       <CartProvider>
           <NavBar />
           <Router />
+          <Footer/>
       </CartProvider>
    </LoginProvider>
   );
