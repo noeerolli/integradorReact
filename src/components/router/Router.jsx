@@ -8,6 +8,7 @@ import { SignUp } from "../login/SignUp"
 import { Login } from "../login/Login"
 import { Home } from "../main/home/Home"
 import { Cart } from "../cart/Cart"
+import { SearchPage } from "../main/pages/SearchPage"
 
 export const Router = () =>{
     return(
@@ -21,6 +22,7 @@ export const Router = () =>{
             <Route path='/login' element={<Login/>}/>
             <Route path='/signUp' element={<SignUp/>}/>
             <Route path='/checkout' element={<CheckoutBox/>}/>
+            <Route path='/SearchPage/:searchParam' element={<SearchPage/>}/>
         </Routes>
     )
 }
