@@ -3,7 +3,7 @@
 
     #nav-login{
         display: flex;
-        flex-direction: column;
+        
     }
 
     #cart-icon{
@@ -11,13 +11,17 @@
         justify-content: flex-end;
         margin-right: 8px;
     }
+
+    #nav-login{
+        margin-left: 20px;
+    }
+
    
 }
 
 @media (max-width: 350px) {
     #login-buttons{
         display: flex;
-        flex-direction: column;
     }
 
     .login-button{
@@ -28,4 +32,7 @@
         align-items: center;
        
     }
+   
+
+
 }

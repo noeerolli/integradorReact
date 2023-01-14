@@ -50,7 +50,7 @@ export const NavBar = () => {
             <div className='nav' id='nav-login'>
                 <div>
                     <Link to='cart'>
-                        <div id='cart-icon' style={{ color: 'white' }}>
+                        <div id='cart-icon' style={{ color: 'white', marginRight: '15px' }}>
                             <FaOpencart style={{ color: 'white', fontSize: '230%' }} />
                             {cartCounter}
                         </div>
