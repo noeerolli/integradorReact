@@ -48,17 +48,18 @@ export const NavBar = () => {
 
 
             <div className='nav' id='nav-login'>
+               
+                <div id='login-buttons'>
+                    <Link to="/login"><Button className='login-button fw-bold' variant="warning mx-2" disabled={waiting} >Login</Button ></Link>
+                    <Button className='login-button fw-bold' variant="warning mx-2" onClick={logout}>Logout</Button>
+                </div>
                 <div>
                     <Link to='cart'>
-                        <div id='cart-icon' style={{ color: 'white', marginRight: '15px' }}>
+                        <div id='cart-icon' style={{ color: 'white', marginRight: '25px', marginLeft:'20px' }}>
                             <FaOpencart style={{ color: 'white', fontSize: '230%' }} />
                             {cartCounter}
                         </div>
                     </Link>
-                </div>
-                <div id='login-buttons'>
-                    <Link to="/login"><Button className='login-button fw-bold' variant="warning mx-2" disabled={waiting} >Login</Button ></Link>
-                    <Button className='login-button fw-bold' variant="warning mx-2" onClick={logout}>Logout</Button>
                 </div>
             </div>
 

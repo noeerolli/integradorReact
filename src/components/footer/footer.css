@@ -5,6 +5,7 @@ footer{
     z-index:999999;
     width: 100%;
     margin-top: 100px;
+    
      
 }
 
@@ -14,5 +15,10 @@ footer{
     
 }
 
+.copyright{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
 
 

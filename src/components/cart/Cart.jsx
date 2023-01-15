@@ -64,15 +64,17 @@ export const Cart = () =>{
                         <p className="total-purchase fw-bold">Total: ${total}</p>
                     </div>
                     
+                  
                     <div style={{margin: "2em"}}>
                         <Link to={"/checkout"}>
-                            <Button variant="light">Finalizar compra</Button>
+                            <button  className="btn bg-light m-3">Finalizar compra</button>
                         </Link>
 
                         <Link to="/">
                             <button className="btn bg-warning m-3">Seguir comprando</button>
                         </Link>
                     </div>
+
 
                 </div>
             </div>

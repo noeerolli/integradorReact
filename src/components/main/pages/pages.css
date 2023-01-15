@@ -71,6 +71,12 @@ a{
     margin: 4em;
 }
 
+.products-card{
+    height:450px;
+}
+
+
+
 
 @media (max-width: 750px) {
 
@@ -84,4 +90,15 @@ a{
     margin: 1em;
 }
 
+.detail-container{
+    flex-direction: column;
 }
+
+.detail-img{
+    justify-content: center;
+    margin: auto;
+}
+
+
+}
+

@@ -8,7 +8,7 @@ export const Card = ({name, price, image, detail, currency}) => {
 
     return (
         
-        <div className="card" style={{height:"450px"}}>
+        <div className=" products-card card" >
         <div className="card-header flex-center"  style={{color:"black"}}>Precio: {currency} {price}</div>
         <div style={{display:"flex", justifyContent: "center"}}><img  className="card-img card-img-clothing"  src={image} alt={name} /></div>
         <div className="card-body flex-center ">

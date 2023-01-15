@@ -46,7 +46,7 @@ export const Login = () =>{
         <div className="login-container">
             <Container>
                 <Form >
-                    <h2 style={{color: "white" }}>Login</h2>
+                    <h2 style={{color: "white", marginBottom:'15px' }}>Login</h2>
 
                     <p style={{color:"white"}}>No tenés una cuenta <Link to = "/signUp" style={{textDecoration:"underline", color:"#F1C40F"}} >Registrate</Link></p> 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -58,12 +58,12 @@ export const Login = () =>{
                     </Form.Group>
                     
                     <div>
-                        <Button variant="light" onClick={checkForm} disabled={waiting}>
+                        <Button className="mb-4" variant="light" onClick={checkForm} disabled={waiting}>
                             Login
                         </Button>
                         <hr style={{borderTop: "3px solid white" }}></hr>
                         
-                        <Button  className="my-3 mx-" variant="light" onClick={googleSignIn} disabled={waiting}>
+                        <Button  className="my-3 mt-4" variant="light" onClick={googleSignIn} disabled={waiting}>
                           <FcGoogle/> Ingresar con Google
                         </Button>
                     </div>

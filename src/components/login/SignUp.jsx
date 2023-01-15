@@ -51,10 +51,10 @@ export const SignUp = () =>{
             <Container>
 
 
-                <h2 style={{color: "white", marginBottom: "1em"}}>Registro</h2>
+                <h2 style={{color: "white", marginBottom: "2em"}}>Registro</h2>
                 <Form>
                 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-4" controlId="formBasicEmail">
                         <Form.Control name="email" type="email" placeholder="Ingrese su Email" onChange={handleInput} />
                     </Form.Group>
 
@@ -62,7 +62,7 @@ export const SignUp = () =>{
                         <Form.Control  name="password" type="password" placeholder="Contraseña, mínimo 6 caracteres" onChange={handleInput} />
                     </Form.Group>
                     
-                    <div className="d-flex flex-center">
+                    <div className="d-flex flex-center mt-4 mb-4">
                         <Button variant="light" onClick={checkForm} disabled={waiting}>
                             Registrarme
                         </Button>
@@ -71,7 +71,7 @@ export const SignUp = () =>{
                         </button></Link>
                     </div>
 
-                    <p style={{color:"white"}}>Ya tengo cuenta <Link to = {"/login"} style={{textDecoration:"underline", color:"#F1C40F"}}>Loguearme</Link></p>
+                    <p style={{color:"white", marginBottom: "135px"}}>Ya tengo cuenta <Link to = {"/login"} style={{textDecoration:"underline", color:"#F1C40F"}}>Loguearme</Link></p>
                     
                     
                 </Form>
