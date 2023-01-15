@@ -31,7 +31,7 @@ export const ItemDetails = () => {
                         </div>
                     </div>
 
-                    <div className="card-body d-flex w-100" >
+                    <div className="card-body d-flex w-100 text-center" >
                         <div className="d-flex flex-column w-100 text-center fs-2 justify-content-center">
                             <div className='card-title'>{item.name}</div>
                             

@@ -92,6 +92,7 @@ a{
 
 .detail-container{
     flex-direction: column;
+    margin: 10%;
 }
 
 .detail-img{
