@@ -1,9 +1,6 @@
 import { LoginContext } from "../login/LoginContext";
 import { Login } from "../login/Login";
 import { useContext } from "react";
-import { DirecEnvio } from "./DirecEnvio";
-import { Pago } from "./Pago";
-import { Link } from "react-router-dom";
 
 
 export const CheckoutBox = () => {
