@@ -1,11 +1,17 @@
 import { LoginContext } from "../login/LoginContext";
 import { Login } from "../login/Login";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { Button, Col, Form, InputGroup, Row } from "react-bootstrap";
+import { CartContext } from "./CartContext";
+import { Link } from "react-router-dom";
 
 
 export const CheckoutBox = () => {
 
     const { isLogged } = useContext(LoginContext);
+    const { products, cartCounter, total } = useContext(CartContext);
+    const [validated, setValidated] = useState(false);
+
 
 
     const handleSubmit = (event) => {
@@ -21,8 +27,7 @@ export const CheckoutBox = () => {
 
     return isLogged
         ?
-
-        <div className="container bg-white mt-5 border border-warning rounded">
+<div className="container bg-white mt-5 border border-warning rounded">
             <div className="container " >
                 <main>
                     <div className="py-5 text-center">
@@ -37,28 +42,20 @@ export const CheckoutBox = () => {
                                 <span className="text-primary">Tus Productos</span>
                                 <span className="badge bg-primary rounded-pill">{cartCounter}</span>
                             </h4>
-                            <ul className="list-group mb-3">
-                                <li className="list-group-item d-flex justify-content-between lh-sm">
-                                    <div>
-                                        <h6 className="my-0">Nombre del Producto</h6>
-                                        <small className="text-muted">Breve Descripción</small>
-                                    </div>
-                                    <span className="text-muted">$12</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between lh-sm">
-                                    <div>
-                                        <h6 className="my-0">Segundo producto</h6>
-                                        <small className="text-muted">Brief description</small>
-                                    </div>
-                                    <span className="text-muted">$8</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between lh-sm">
-                                    <div>
-                                        <h6 className="my-0">Tercer Articulo</h6>
-                                        <small className="text-muted">Brief description</small>
-                                    </div>
-                                    <span className="text-muted">$5</span>
-                                </li>
+
+                            {products.map(({ id, name, price }) =>
+                                <ul className="list-group mb-3">
+                                    <li className="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 className="my-0">{name}</h6>
+                                           
+                                        </div>
+                                        <span className="text-muted">${price}</span>
+                                    </li>
+                                </ul>
+                            )}
+
+                            <ul>
                                 <li className="list-group-item d-flex justify-content-between bg-light">
                                     <div className="text-success">
                                         <h6 className="my-0">Codigo de Promoción</h6>
@@ -79,6 +76,7 @@ export const CheckoutBox = () => {
                                 </div>
                             </form>
                         </div>
+
                         <div className="col-md-7 col-lg-8">
 
                             <h4 className="mb-3">Dirección de envio</h4>
