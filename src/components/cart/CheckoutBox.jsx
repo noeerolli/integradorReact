@@ -3,7 +3,7 @@ import { Login } from "../login/Login";
 import { useContext, useState } from "react";
 import { Button, Col, Form, InputGroup, Row } from "react-bootstrap";
 import { CartContext } from "./CartContext";
-import { Link } from "react-router-dom";
+
 
 
 export const CheckoutBox = () => {
