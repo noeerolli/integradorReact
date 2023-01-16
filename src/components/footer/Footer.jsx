@@ -28,16 +28,16 @@ export const Footer = () => {
                     <li className="text-center"><Link to="/contact" className="text-reset">Contacto</Link></li>
                 </ul>
                 <div className=" container col-12 col-md-4 list-unstyled d-flex flex-wrap text-center">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png" className="icon-logo lazyloaded" alt="visa" width="50" height="35"/>
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"  className="icon-logo lazyloaded" alt="mastercard" width="50" height="35"/>
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"  className="icon-logo lazyloaded" alt="amex" width="50" height="35"/>
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/diners@2x.png"  className="icon-logo lazyloaded" alt="diners" width="50" height="35"/>
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banelco@2x.png"  className="icon-logo lazyloaded" alt="ar_banelco" width="50" height="35"/>
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cabal@2x.png"  className="icon-logo lazyloaded" alt="ar_cabal" width="50" height="35"/>
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-naranja@2x.png"  className="icon-logo lazyloaded" alt="ar_tarjeta-naranja" width="50" height="35"/>
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-shopping@2x.png" className="icon-logo lazyloaded" alt="ar_tarjeta-shopping" width="50" height="35"/>
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png"  className="icon-logo lazyloaded" alt="mercadopago" width="50" height="35"/>
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png"  className="icon-logo lazyloaded" alt="rapipago" width="50" height="35"/>
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png" className="icon-logo lazyloaded" alt="visa" width="50" height="35"/>
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"  className="icon-logo lazyloaded" alt="mastercard" width="50" height="35"/>
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"  className="icon-logo lazyloaded" alt="amex" width="50" height="35"/>
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/diners@2x.png"  className="icon-logo lazyloaded" alt="diners" width="50" height="35"/>
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banelco@2x.png"  className="icon-logo lazyloaded" alt="ar_banelco" width="50" height="35"/>
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cabal@2x.png"  className="icon-logo lazyloaded" alt="ar_cabal" width="50" height="35"/>
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-naranja@2x.png"  className="icon-logo lazyloaded" alt="ar_tarjeta-naranja" width="50" height="35"/>
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-shopping@2x.png" className="icon-logo lazyloaded" alt="ar_tarjeta-shopping" width="50" height="35"/>
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png"  className="icon-logo lazyloaded" alt="mercadopago" width="50" height="35"/>
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png"  className="icon-logo lazyloaded" alt="rapipago" width="50" height="35"/>
                 </div>
                 <p className="copyright">©Copyright Warsies Shop - 2023</p>
             </nav>
