@@ -1,8 +1,9 @@
 import { LoginContext } from "../login/LoginContext";
 import { Login } from "../login/Login";
 import { useContext, useState } from "react";
-import { Button, Col, Form, InputGroup, Row } from "react-bootstrap";
+import { Alert, Button, Col, Form, InputGroup, Row } from "react-bootstrap";
 import { CartContext } from "./CartContext";
+
 
 
 
@@ -19,15 +20,21 @@ export const CheckoutBox = () => {
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+        
+        } else {
+
+            alert("Pagado")
         }
-
+       
         setValidated(true);
+            
 
-    }
+    } 
+
 
     return isLogged
         ?
-<div className="container bg-white mt-5 border border-warning rounded">
+        <div className="container bg-white mt-5 border border-warning rounded">
             <div className="container " >
                 <main>
                     <div className="py-5 text-center">
@@ -48,7 +55,7 @@ export const CheckoutBox = () => {
                                     <li className="list-group-item d-flex justify-content-between lh-sm">
                                         <div>
                                             <h6 className="my-0">{name}</h6>
-                                           
+
                                         </div>
                                         <span className="text-muted">${price}</span>
                                     </li>
@@ -72,7 +79,7 @@ export const CheckoutBox = () => {
                             <form className="card p-2">
                                 <div className="input-group">
                                     <input name="promo" type="text" className="form-control" placeholder="Promo code" />
-                                    <button className="btn btn-secondary">Aplicar</button>
+                                    <button className="btn btn-secondary" onClick={(e)=>(e.preventDefault())}>Aplicar</button>     
                                 </div>
                             </form>
                         </div>
@@ -190,24 +197,30 @@ export const CheckoutBox = () => {
 
                                     <Form.Group className="mb-1">
                                         <Form.Check
-                                            required
-                                            label="Tarjeta debito"
-                                            feedbackType="invalid"
+                                            type="radio"
+                                            label="Tarjeta de Debito"
+                                            name="formHorizontalRadios"
+                                            id="formHorizontalRadios2"
+                                            
                                         />
                                     </Form.Group>
 
                                     <Form.Group className="mb-1">
                                         <Form.Check
-                                            required
-                                            label="Tarjeta Credito"
-                                            feedbackType="invalid"
+                                            type="radio"
+                                            label="Tarjeta de Credito"
+                                            name="formHorizontalRadios"
+                                            id="formHorizontalRadios2"
+                                          
                                         />
                                     </Form.Group>
                                     <Form.Group className="mb-1">
                                         <Form.Check
-                                            required
-                                            label="PayPal"
-                                            feedbackType="invalid"
+                                            type="radio"
+                                            label="Paypal"
+                                            name="formHorizontalRadios"
+                                            id="formHorizontalRadios2"
+                                       
                                         />
                                     </Form.Group>
 
@@ -221,7 +234,7 @@ export const CheckoutBox = () => {
 
                                     <Form.Group as={Col} md="6" controlId="validationCustom06">
                                         <Form.Label>Numero de Tarjeta</Form.Label>
-                                        <Form.Control type="text" placeholder="1234 5678 9876 1368" required />
+                                        <Form.Control type="text" maxlength="16" pattern="([0-9]{16})" placeholder="1234 5678 9876 1368" required />
                                         <Form.Control.Feedback type="invalid">
                                             numero que figura en la tarjeta
                                         </Form.Control.Feedback>
@@ -229,7 +242,7 @@ export const CheckoutBox = () => {
 
                                     <Form.Group as={Col} md="4" controlId="validationCustom06">
                                         <Form.Label>Vencimiento</Form.Label>
-                                        <Form.Control type="text" placeholder="03/23" required />
+                                        <Form.Control type="month" placeholder="03/23" required />
                                         <Form.Control.Feedback type="invalid">
                                             Fecha venciomiento de la tarjeta
                                         </Form.Control.Feedback>
@@ -237,15 +250,15 @@ export const CheckoutBox = () => {
 
                                     <Form.Group as={Col} md="4" className="mb-3" controlId="validationCustom06">
                                         <Form.Label>CVV</Form.Label>
-                                        <Form.Control type="text" placeholder="526" required />
+                                        <Form.Control type="text" maxlength="3" pattern="([0-9]{3})" placeholder="526" required />
                                         <Form.Control.Feedback type="invalid">
                                             ultimos 3 numeros al reverso de la tarjeta
                                         </Form.Control.Feedback>
                                     </Form.Group>
                                 </Row>
-
+                               
                                 <Button type="submit">Pagar</Button>
-
+                                
                             </Form>
 
                         </div>
